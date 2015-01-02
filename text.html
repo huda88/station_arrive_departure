@@ -1,0 +1,4093 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=ISO-8859-1" />
+<meta name="language" content="en" />
+<meta http-equiv="x-ua-compatible" content="IE=Edge" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>SBB: Online timetable.</title>
+<!-- Start Webtrends Meta-Tags -->
+<meta name="DCSext.wt_contentlanguage" content="en" />
+<meta name="DCS.dcssip" content="www.sbb.ch" />
+<meta name="WT.cg_n" content="fahrplan" />
+<meta name="WT.cg_s" content="online-fahrplan" />
+<meta name="WT.cg_2" content="" />
+<meta name="WT.cg_3" content="" />
+<meta name="DCSext.wt_channel" content="Desktop" />
+<!-- End Webtrends Meta-Tags -->
+<script type="text/javascript">document.getElementsByTagName('html')[0].setAttribute('class', 'js');</script>
+<!--[if IE]>
+<script type="text/javascript">document.getElementsByTagName('html')[0].setAttribute('className', 'js');</script>
+<![endif]-->
+<link href="/fahrplan_en/img/favicon.png" rel="apple-touch-icon"/>
+<link href="/fahrplan_en/img/favicon.ico" rel="shortcut icon"/>
+<link href="/fahrplan_en/css/base.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/fahrplan_en/css/subpage.css" media="all" rel="stylesheet" type="text/css"/>
+<!--[if IE]> <link href="/fahrplan_en/css/ie.css" media="all" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if IE 6]> <link href="/fahrplan_en/css/ie6.css" media="all" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if IE 7]> <link href="/fahrplan_en/css/ie7.css" media="all" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if IE 8]> <link href="/fahrplan_en/css/ie8.css" media="all" rel="stylesheet" type="text/css" /><![endif]-->
+<link href="/fahrplan_en/css/print.css" media="print" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="/css/hafas_oneSBB.css?guiV=4.11.43" />
+<style type="text/css">
+/* <![CDATA[ */
+div.nolabel {
+margin-left:90px !important;
+}
+div.labelHolder {
+width:80px;
+}
+/* ]]> */
+</style>
+<style type="text/css">
+/* <![CDATA[ */
+/* Link-Buttons */
+input.map          {background-image:url("/img/one/icon_arrow_right.png");}
+input.map:hover    {background-image:url("/img/one/icon_arrow_right_hover.png");}
+/* Suggest */
+input.suggestButton     {background-image:url("/img/one/icon_oeffnen.png") !important;}
+input.suggestButton     {height:18px !important;}
+/* Common Icon Links  */
+span.himdetails,
+a.later,
+a.query,
+a.std              {background-image:url("/img/one/icon_arrow_right.png");}
+span.himdetails:hover,
+a.later:hover,
+a.query:hover,
+a.std:hover        {background-image:url("/img/one/icon_arrow_right_hover.png");}
+a.std_left,
+a.earlier          {background-image:url("/img/one/icon_arrow_left.png");}
+a.std_left:hover,
+a.earlier:hover    {background-image:url("/img/one/icon_arrow_left_hover.png");}
+a.weather          {background-image:url("/img/one/icon_arrow_rightup.png");}
+a.weather:hover    {background-image:url("/img/one/icon_arrow_rightup_hover.png");}
+a.closeDetails       {background-image:url("/img/one/icon_schliessen.png");}
+a.closeDetails:hover {background-image:url("/img/one/icon_schliessen_hover.png");}
+a.openDetails        {background-image:url("/img/one/icon_oeffnen.png");}
+a.openDetails:hover  {background-image:url("/img/one/icon_oeffnen_hover.png");}
+a.advanced              {background-image:url("/img/one/icon_oeffnen.png");}
+a.advanced:hover        {background-image:url("/img/one/icon_oeffnen_hover.png");}
+a.advanced_aktiv        {background-image:url("/img/one/icon_schliessen.png");}
+a.advanced_aktiv:hover  {background-image:url("/img/one/icon_schliessen_hover.png");}
+a.smsalarm       {background-image:url("/img/one/smsalarm/icon_sms_neuesabo_inaktiv.png");}
+a.smsalarm:hover {background-image:url("/img/one/smsalarm/icon_sms_neuesabo_hover.png");}
+a.mysbb          {background-image:url("/img/one/icon_fahrplan_speichern_inaktiv.png");}
+a.mysbb:hover    {background-image:url("/img/one/icon_fahrplan_speichern_hover.png");}
+a.map            {background-image:url("/img/one/icon_fahrplan_karte_inaktiv.png");}
+a.map:hover      {background-image:url("/img/one/icon_fahrplan_karte_hover.png");}
+a.map_aktiv      {background-image:url("/img/one/icon_fahrplan_karte_aktiv.png");}
+a.usermail       {background-image:url("/img/one/icon_fahrplan_email_inaktiv.png");}
+a.usermail:hover {background-image:url("/img/one/icon_fahrplan_email_hover.png");}
+a.rtf            {background-image:url("/img/one/icon_fahrplan_word_inaktiv.png");}
+a.rtf:hover      {background-image:url("/img/one/icon_fahrplan_word_hover.png");}
+a.textview,
+span.textview    {background-image:url("/img/one/icon_fahrplan_textansicht_inaktiv.png");}
+a.textview:hover {background-image:url("/img/one/icon_fahrplan_textansicht_hover.png");}
+a.text2speech    {background-image:url("/img/one/icon_fahrplan_vorlesen_inaktiv.png");}
+a.text2speech:hover {background-image:url("/img/one/icon_fahrplan_vorlesen_hover.png");}
+a.text2speech_aktiv {background-image:url("/img/one/icon_fahrplan_vorlesen_aktiv.png");}
+a.download       {background-image:url("/img/one/icon_fahrplan_speichern_inaktiv.png");}
+a.download:hover {background-image:url("/img/one/icon_fahrplan_speichern_hover.png");}
+a.download_aktiv {background-image:url("/img/one/icon_fahrplan_speichern_aktiv.png");}
+a.last           {background-image:url("/img/one/icon_fahrplan_letztefahrt_inaktiv.png");}
+a.first          {background-image:url("/img/one/icon_fahrplan_erstefahrt_inaktiv.png");}
+a.last:hover     {background-image:url("/img/one/icon_fahrplan_letztefahrt_hover.png");}
+a.first:hover    {background-image:url("/img/one/icon_fahrplan_erstefahrt_hover.png");}
+span.last        {background-image:url("/img/one/icon_fahrplan_letztefahrt_aktiv.png");}
+span.first       {background-image:url("/img/one/icon_fahrplan_erstefahrt_aktiv.png");}
+a.ecology        {background-image:url("/img/one/icon_fahrplan_umwelt_inaktiv.png");}
+a.ecology:hover  {background-image:url("/img/one/icon_fahrplan_umwelt_hover.png");}
+a.ecology_aktiv  {background-image:url("/img/one/icon_fahrplan_umwelt_aktiv.png");}
+/* BAIM */
+a.baim           {background-image:url("/img/one/icon_fahrplan_baim_inaktiv.png");}
+a.baim:hover     {background-image:url("/img/one/icon_fahrplan_baim_hover.png");}
+a.baim_aktiv     {background-image:url("/img/one/icon_fahrplan_baim_aktiv.png");}
+a.calendar       {background-image:url("/img/one/icon_fahrplan_kalender_inaktiv.png");}
+a.calendar:hover {background-image:url("/img/one/icon_fahrplan_kalender_hover.png");}
+a.detfares       {background-image:url("/img/icons/fares/icon_fahrplan_preisanzeige_inaktiv.png");}
+a.detfares_aktiv {background-image:url("/img/icons/fares/icon_fahrplan_preisanzeige_aktiv.png");}
+a.detfares:hover {background-image:url("/img/icons/fares/icon_fahrplan_preisanzeige_hover.png");}
+img.capacity     {width:15px:height:15px;border:none;vertical-align:bottom;}
+a.locationmap       {background-image:url("/img/one/icon_fahrplan_standort_inaktiv.png");}
+a.locationmap:hover {background-image:url("/img/one/icon_fahrplan_standort_hover.png");}
+span.sparpreis   {
+background:transparent url("/extern/sparpreis/icon_sparpreis.png") no-repeat 0 0;
+}
+div.HFSlanguage_de td.fares a.redButton {padding:2px 12px !important;}
+div.HFSlanguage_fr td.fares a.redButton {padding:2px 8px !important;}
+div.HFSlanguage_it td.fares a.redButton {padding:2px 2px !important;}
+div.HFSlanguage_en td.fares a.redButton {padding:2px 12px !important;}
+.hideLine, .hideLine * {display:none !important;}
+/* infobox with rounded corners */
+div.overlappingInfoBoxTop{
+background-image:url(/img/js/CPTVMap/rounded_top.png);
+}
+div.overlappingInfoBoxBottom{
+background-image:url(/img/js/CPTVMap/rounded_bottom.png);
+}
+/* ]]> */
+</style>
+<style type="text/css">
+/* <![CDATA[ */
+/* ]]> */
+</style>
+<link rel="stylesheet" type="text/css" href="/css/hafasMap.css?guiV=4.11.43" />
+<link rel="stylesheet" type="text/css" href="/css/hafas_sbb_suggest.css?guiV=4.11.43" />
+<style type="text/css">.largeScreen .content-wrapper {padding-left: 66px; position: relative; left: -5.6%;zoom: 1;}</style>
+<!--[if IE 6]>
+<script type="text/javascript">
+try {
+document.execCommand("BackgroundImageCache", false, true);
+} catch (e) { }
+</script>
+<![endif]-->
+<!-- ================================================ -->
+<!-- SWITCH FROM WEBTRENDS TO DTM DEPENDING ON CONFIG -->
+<!-- ================================================ -->
+<!-- FRAMEWORKEXPORT FAHRPLAN : SWITCH FROM WEBTRENDS TO DTM DEPENDING ON CONFIG -->
+<script type="text/javascript">
+var wt_config = {
+domain: "statse.webtrendslive.com",
+dcsid: "dcsi1amqxvz5bdzt2fpkiajsg_9l5r",
+onsitedoms: "www.sbb.ch,m.sbb.ch,www.cff.ch,m.cff.ch,www.ffs.ch,m.ffs.ch,fahrplan.sbb.ch,sbb-etickets.ch,cff-etickets.ch,ffs-etickets.ch",
+downloadtypes: "xls,doc,pdf,txt,csv,zip,docx,xlsx",
+fpcdom: ".sbb.ch",
+jsdomain: "www.sbb.ch"
+}
+if (false) {
+wt_config.oss="";
+wt_config.oss_r="";
+}
+</script>
+<script src="//www.sbb.ch/js/webtrends.fahrplan.load.js" type="text/javascript"></script>
+<!-- END OF SmartSource Data Collector TAG -->
+</head>
+<body class="layout-timetable" data-largescreen="1200">
+<script type="text/javascript">
+document.body.className += ' left-aligned';
+</script>
+<script src="/fahrplan_en/js/base.js" type="text/javascript"></script>
+<script src="/fahrplan_en/js/subpage.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+jQuery.noConflict();
+(function($) {
+$(document).ready(function() {
+var $page = $('body'), application = new Nx.Application($page);
+application.registerModule($page, 'Sbb');
+application.registerModules();
+application.start();
+if(document.getElementById('dateinputtest'))
+SBB.datepicker(document.getElementById('dateinputtest'));
+if(document.getElementById('from'))
+{
+document.getElementById('from').focus();
+}
+});
+})(Nx.$);
+//]]>
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 966155107;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "666666";
+var google_conversion_label = "EOoBCLXZsAMQ47bZzAM";
+var google_conversion_value = 0;
+/* ]]> */
+</script>
+<script type="text/javascript">
+//<![CDATA[
+var gadswitch = (window.location.protocol == "https:") ? "https://www.googleadservices.com/pagead/conversion.js" : "http://www.googleadservices.com/pagead/conversion.js";
+document.writeln('<scr' + 'ipt language="JavaScript" src="' + gadswitch + '" type="text/javascript">' + '<\/scr' + 'ipt>');
+//]]>
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="https://www.googleadservices.com/pagead/conversion/966155107/?label=EOoBCLXZsAMQ47bZzAM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+<ul id="skiplinks">
+<li><a accesskey="0" href="http://www.sbb.ch/" tabindex="0">To the homepage</a></li>
+<li><a accesskey="1" href="#Navigation">To the main navigation</a></li>
+<li><a accesskey="2" href="#Contents">To the contents</a></li>
+<li><a accesskey="3" href="http://www.sbb.ch/en/meta/contact/addresses-sbb.html">To the contact page</a></li>
+<li><a accesskey="4" href="http://www.sbb.ch/en/meta/site-index.html">To the site map</a></li>
+<li><a accesskey="5" href="http://www.sbb.ch/en/meta/suche.html">To the search page</a></li>
+<li><a accesskey="6" href="#Metanavigation">To the service navigation</a></li>
+</ul>
+<div class="page">
+<div class="head">
+<div class="content-wrapper">
+<h2 class="hidden">Service navigation</h2>
+<div class="line lineMetaNavLogo">
+<div class="unit size2of3">
+<div id="Metanavigation" class="mod modMetaNavigation"><div class="inner"><!-- template content start --><div class="bd">
+<ul>
+<li>
+<a title="Home" href="http://www.sbb.ch/en/home.html">Home</a>
+</li>
+<li>
+<a title="Site index" href="http://www.sbb.ch/en/meta/site-index.html">Site index</a>
+</li>
+<li>
+<a title="Newsletter" href="http://www.sbb.ch/en/meta/newsletter-subscription.html">Newsletter</a>
+</li>
+<li>
+<a title="RSS-Feed" href="http://www.sbb.ch/en/meta/rss-feed.html">RSS-Feed</a>
+</li>
+<li>
+<a title="Contact" href="http://www.sbb.ch/en/meta/contact.accitm.fahrplan.html">Contact</a>
+</li>
+<li>
+<a title="Search" href="http://www.sbb.ch/en/meta/suche.html">Search</a>
+</li>
+<li>
+<a title="Jobs" href="http://www.sbb.ch/en/group/jobs-careers/job-offers/job-search.html">Jobs</a>
+</li>
+<li>
+<ul class="langnav">
+<li><a title="de" href="http://fahrplan.sbb.ch/bin/query.exe/dn" class=" noexternalicon">de</a></li>
+<li><a title="fr" href="http://fahrplan.sbb.ch/bin/query.exe/fn" class=" noexternalicon">fr</a></li>
+<li><a title="it" href="http://fahrplan.sbb.ch/bin/query.exe/in" class=" noexternalicon">it</a></li>
+<li><a title="en" href="http://fahrplan.sbb.ch/bin/query.exe/en" class=" noexternalicon">en</a></li>
+</ul>
+</li>
+</ul>
+</div><!-- template content end --></div></div>
+</div>
+<div class="unit lastUnit size1of3">
+<div class="mod modLogo"><div class="inner"><!-- template content start --><div class="bd">
+<a class="noexternalicon" href="http://www.sbb.ch/en/home.html" title="go to SBB home page"><img src="/fahrplan_en/content/sbb/en/desktop/_jcr_content/configNavigation/logo.spooler.logo.162.png/1300643137591.png" alt="go to SBB home page" title="go to SBB home page"/></a>
+</div><!-- template content end --></div></div>
+</div>
+</div>
+<h2 class="hidden">Main navigation</h2>
+<div id="Navigation" class="mod modMainNavigation">
+<div class="inner">
+<div class="bd">
+<ul class="rootmenu">
+<li class="megadropdownAlignLeft">
+<a title="Leisure &amp; holidays" href="http://www.sbb.ch/en/leisure-holidays.html" class="toplevel ">
+Leisure &amp; holidays<span class="openmenuicon">&nbsp;</span>
+</a>
+<div class="submenu_container">
+<div class="megadropdown">
+<div class="megadropdown_shadow">
+<div class="hd">
+<div class="megadropdown_shadow_top_left"></div>
+<div class="megadropdown_shadow_top_right"></div>
+</div>
+<div class="bd megadropdown_shadow_middle_left">
+<div class="megadd_inner megadropdown_shadow_middle_right">
+<div class="bd">
+<ul class="submenu">
+<li>
+<a title="Day trips" href="http://www.sbb.ch/en/leisure-holidays/day-trips.html" class="secondlevel" tabindex="-1">
+<strong>Day trips</strong>
+</a>
+<ul>
+<li>
+<a title="Christmas market" href="http://www.sbb.ch/en/leisure-holidays/day-trips/advent.html" tabindex="-1">
+<strong>Christmas market</strong>
+</a>
+</li>
+<li>
+<a title="Excursion ideas" href="http://www.sbb.ch/en/leisure-holidays/day-trips/ideas-for-your-freetime.html" tabindex="-1">
+<strong>Excursion ideas</strong>
+</a>
+</li>
+<li>
+<a title="Saving tips" href="http://www.sbb.ch/en/leisure-holidays/day-trips/spartipps.html" tabindex="-1">
+<strong>Saving tips</strong>
+</a>
+</li>
+<li>
+<a title="Snow'n'Rail" href="http://www.sbb.ch/en/leisure-holidays/day-trips/snownrail.html?leisureTripItem=snow" tabindex="-1">
+<strong>Snow&#039;n&#039;Rail</strong>
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a title="Events" href="http://www.sbb.ch/en/leisure-holidays/events.html" class="secondlevel" tabindex="-1">
+<strong>Events</strong>
+</a>
+<ul>
+<li>
+<a title="Fairs" href="http://www.sbb.ch/en/leisure-holidays/events/messen.html?leisureTripItem=fairs" tabindex="-1">
+<strong>Fairs</strong>
+</a>
+</li>
+<li>
+<a title="Concerts" href="http://www.sbb.ch/en/leisure-holidays/events/konzerte.html?leisureTripItem=concerts" tabindex="-1">
+<strong>Concerts</strong>
+</a>
+</li>
+<li>
+<a title="Parties" href="http://www.sbb.ch/en/leisure-holidays/events/partys.html?leisureTripItem=parties" tabindex="-1">
+<strong>Parties</strong>
+</a>
+</li>
+<li>
+<a title="Open airs &amp; festivals" href="http://www.sbb.ch/en/leisure-holidays/events/festivalsopenairs.html?leisureTripItem=openairs" tabindex="-1">
+<strong>Open airs &amp; festivals</strong>
+</a>
+</li>
+<li>
+<a title="Sports events" href="http://www.sbb.ch/en/leisure-holidays/events/sporteventslaeufe.html?leisureTripItem=sporting" tabindex="-1">
+<strong>Sports events</strong>
+</a>
+</li>
+<li>
+<a title="Art &amp; knowledge" href="http://www.sbb.ch/en/leisure-holidays/events/art-knowledge.html" tabindex="-1">
+<strong>Art &amp; knowledge</strong>
+</a>
+</li>
+<li>
+<a title="Folk festivals &amp; culinary events" href="http://www.sbb.ch/en/leisure-holidays/events/volksfestefolklore.html?leisureTripItem=folk_festivals" tabindex="-1">
+<strong>Folk festivals &amp; culinary events</strong>
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a title="Holidays in Switzerland" href="http://www.sbb.ch/en/leisure-holidays/holidays--short-breaks-in-switzerland.html" class="secondlevel" tabindex="-1">
+<strong>Holidays in Switzerland</strong>
+</a>
+<ul>
+<li>
+<a title="Attractive special offers" href="http://www.sbb.ch/en/leisure-holidays/holidays--short-breaks-in-switzerland/attractive-special-offers.html?_charset_=UTF-8&keyword=specialoffers" tabindex="-1">
+<strong>Attractive special offers</strong>
+</a>
+</li>
+<li>
+<a title="Panorama journeys" href="http://www.sbb.ch/en/leisure-holidays/holidays--short-breaks-in-switzerland/scenic-trains.html" tabindex="-1">
+<strong>Panorama journeys</strong>
+</a>
+</li>
+<li>
+<a title="Short breaks" href="http://www.sbb.ch/en/leisure-holidays/holidays--short-breaks-in-switzerland/special-offers.html" tabindex="-1">
+<strong>Short breaks</strong>
+</a>
+</li>
+<li>
+<a title="Hotel bookings" href="http://www.sbb.ch/en/leisure-holidays/holidays--short-breaks-in-switzerland/hotels.html" tabindex="-1">
+<strong>Hotel bookings</strong>
+</a>
+</li>
+<li>
+<a title="Regions" href="http://www.sbb.ch/en/leisure-holidays/holidays--short-breaks-in-switzerland/regionen.html" tabindex="-1">
+<strong>Regions</strong>
+</a>
+</li>
+<li>
+<a title="Holiday homes" href="http://www.sbb.ch/en/leisure-holidays/holidays--short-breaks-in-switzerland/holiday-homes.html" tabindex="-1">
+<strong>Holiday homes</strong>
+</a>
+</li>
+<li>
+<a title="International guests" href="http://www.sbb.ch/en/leisure-holidays/holidays--short-breaks-in-switzerland/swisstravelsystem.html" tabindex="-1">
+<strong>International guests</strong>
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a title="Europe &amp; worldwide" href="http://www.sbb.ch/en/leisure-holidays/europe-worldwide.html" class="secondlevel" tabindex="-1">
+<strong>Europe &amp; worldwide</strong>
+</a>
+<ul>
+<li>
+<a title="Discover Europe" href="http://www.sbb.ch/en/leisure-holidays/europe-worldwide/europe-by-train/travel-for-less-in-europe.html" tabindex="-1">
+<strong>Discover Europe</strong>
+</a>
+</li>
+<li>
+<a title="Europe by train" href="http://www.sbb.ch/en/leisure-holidays/europe-worldwide/europe-by-train.html" tabindex="-1">
+<strong>Europe by train</strong>
+</a>
+</li>
+<li>
+<a title="Holiday homes" href="http://www.sbb.ch/en/leisure-holidays/europe-worldwide/holiday-homes.html" tabindex="-1">
+<strong>Holiday homes</strong>
+</a>
+</li>
+<li>
+<a title="Flight" href="http://www.sbb.ch/en/leisure-holidays/europe-worldwide/flight.html" tabindex="-1">
+<strong>Flight</strong>
+</a>
+</li>
+<li>
+<a title="Hotel" href="http://www.sbb.ch/en/leisure-holidays/europe-worldwide/hotel.html" tabindex="-1">
+<strong>Hotel</strong>
+</a>
+</li>
+<li>
+<a title="SBB holiday cars" href="http://www.sbb.ch/en/leisure-holidays/europe-worldwide/sbb-holiday-cars.html" tabindex="-1">
+<strong>SBB holiday cars</strong>
+</a>
+</li>
+</ul>
+</li>
+<li class="last">
+<a title="Group travel" href="http://www.sbb.ch/en/leisure-holidays/groups.html" class="secondlevel" tabindex="-1">
+<strong>Group travel</strong>
+</a>
+<ul>
+<li>
+<a title="Company travel" href="http://www.sbb.ch/en/leisure-holidays/groups/company-travel.html" tabindex="-1">
+<strong>Company travel</strong>
+</a>
+</li>
+<li>
+<a title="Association travel" href="http://www.sbb.ch/en/leisure-holidays/groups/association-travel.html" tabindex="-1">
+<strong>Association travel</strong>
+</a>
+</li>
+<li>
+<a title="Private group travel" href="http://www.sbb.ch/en/leisure-holidays/groups/private-group-journeys.html" tabindex="-1">
+<strong>Private group travel</strong>
+</a>
+</li>
+<li>
+<a title="Charter carriage and trains" href="http://www.sbb.ch/en/leisure-holidays/groups/events-mobilitaetsloesungen.html" tabindex="-1">
+<strong>Charter carriage and trains</strong>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ft">
+<div class="megadropdown_shadow_bottom_left"></div>
+<div class="megadropdown_shadow_bottom_right"></div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="megadropdownAlignLeft">
+<a title="Timetable" href="http://www.sbb.ch/en/timetable.html" class="toplevel active">
+Timetable<span class="openmenuicon">&nbsp;</span>
+</a>
+<div class="submenu_container">
+<div class="megadropdown">
+<div class="megadropdown_shadow">
+<div class="hd">
+<div class="megadropdown_shadow_top_left"></div>
+<div class="megadropdown_shadow_top_right"></div>
+</div>
+<div class="bd megadropdown_shadow_middle_left">
+<div class="megadd_inner megadropdown_shadow_middle_right">
+<div class="bd">
+<ul class="submenu">
+<li>
+<a title="Rail traffic information" href="http://www.sbb.ch/en/timetable/rail-traffic-information.html" class="secondlevel" tabindex="-1">
+<strong>Rail traffic information</strong>
+</a>
+<ul>
+<li>
+<a title="Operational position" href="http://fahrplan.sbb.ch/bin/help.exe/en?tpl=showmap_external" tabindex="-1">
+<strong>Operational position</strong>
+</a>
+</li>
+<li>
+<a title="Additional trains" href="http://www.sbb.ch/en/timetable/rail-traffic-information/zusatzzuege.html" tabindex="-1">
+<strong>Additional trains</strong>
+</a>
+</li>
+<li>
+<a title="Construction work Geneva&ndash;Airport/France." href="http://www.sbb.ch/en/timetable/rail-traffic-information/geneva2014.html" tabindex="-1">
+<strong>Construction work Geneva?Airport/France.</strong>
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a title="Online timetable" href="http://fahrplan.sbb.ch/bin/query.exe/en" class="secondlevel" tabindex="-1">
+<strong>Online timetable</strong>
+</a>
+<ul>
+<li>
+<a title="Departure &amp; Arrival" href="http://fahrplan.sbb.ch/bin/stboard.exe/en" tabindex="-1">
+<strong>Departure &amp; Arrival</strong>
+</a>
+</li>
+<li>
+<a title="Trains &amp; Routes" href="http://fahrplan.sbb.ch/bin/trainsearch.exe/en" tabindex="-1">
+<strong>Trains &amp; Routes</strong>
+</a>
+</li>
+<li>
+<a title="Map &amp; Real-time timetable" href="http://fahrplan.sbb.ch/bin/query.exe/en?view=map&SetGlobalOptionGO_callMapFromPosition=mapQuery&ChooseFromMap=yes&" tabindex="-1">
+<strong>Map &amp; Real-time timetable</strong>
+</a>
+</li>
+<li>
+<a title="mySBB" href="http://fahrplan.sbb.ch/bin/profile.exe/en?" tabindex="-1">
+<strong>mySBB</strong>
+</a>
+</li>
+<li>
+<a title="Confirmation of delay" href="http://fahrplan.sbb.ch/bin/trainsearch.exe/en?L=vs_vb&tpl=vb" tabindex="-1">
+<strong>Confirmation of delay</strong>
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a title="Mobile timetables" href="http://www.sbb.ch/en/timetable/mobile-timetables.html" class="secondlevel" tabindex="-1">
+<strong>Mobile timetables</strong>
+</a>
+<ul>
+<li>
+<a title="Mobile Apps" href="http://www.sbb.ch/en/timetable/mobile-timetables/mobile-apps.html" tabindex="-1">
+<strong>Mobile Apps</strong>
+</a>
+</li>
+<li>
+<a title="SMS" href="http://www.sbb.ch/en/timetable/mobile-timetables/sms.html" tabindex="-1">
+<strong>SMS</strong>
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a title="Printed timetables" href="http://www.sbb.ch/en/timetable/printed-timetables.html" class="secondlevel" tabindex="-1">
+<strong>Printed timetables</strong>
+</a>
+<ul>
+<li>
+<a title="Departure posters &amp; pocket timetables" href="http://www.sbb.ch/en/timetable/printed-timetables/taschenfahrplaene.html" tabindex="-1">
+<strong>Departure posters &amp; pocket timetables</strong>
+</a>
+</li>
+<li>
+<a title="International timetables" href="http://www.sbb.ch/en/timetable/printed-timetables/international-timetables.html" tabindex="-1">
+<strong>International timetables</strong>
+</a>
+</li>
+<li>
+<a title="Official timetable" href="http://www.sbb.ch/en/timetable/printed-timetables/official-timetable.html" tabindex="-1">
+<strong>Official timetable</strong>
+</a>
+</li>
+<li>
+<a title="Personal timetable" href="http://www.sbb.ch/en/timetable/printed-timetables/personal-timetable.html" tabindex="-1">
+<strong>Personal timetable</strong>
+</a>
+</li>
+</ul>
+</li>
+<li class="last">
+<a title="Timetable information" href="http://www.sbb.ch/en/timetable/timetable-information.html" class="secondlevel" tabindex="-1">
+<strong>Timetable information</strong>
+</a>
+<ul>
+<li>
+<a title="Train identification" href="http://www.sbb.ch/en/timetable/timetable-information/explanation-of-symbols.html" tabindex="-1">
+<strong>Train identification</strong>
+</a>
+</li>
+<li>
+<a title="Partner programme" href="http://fahrplan.sbb.ch/bin/help.exe/en?application=INPUTGEN&tpl=inputgen_start" tabindex="-1">
+<strong>Partner programme</strong>
+</a>
+</li>
+<li>
+<a title="Information status" href="http://www.sbb.ch/en/timetable/timetable-information/information-status.html" tabindex="-1">
+<strong>Information status</strong>
+</a>
+</li>
+<li>
+<a title="Timetable change" href="http://www.sbb.ch/en/timetable/timetable-information/timetable-change.html" tabindex="-1">
+<strong>Timetable change</strong>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ft">
+<div class="megadropdown_shadow_bottom_left"></div>
+<div class="megadropdown_shadow_bottom_right"></div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a title="Travelcards &amp; tickets" href="http://www.sbb.ch/en/travelcards-and-tickets.html" class="toplevel ">
+Travelcards &amp; tickets<span class="openmenuicon">&nbsp;</span>
+</a>
+<div class="submenu_container">
+<div class="megadropdown">
+<div class="megadropdown_shadow">
+<div class="hd">
+<div class="megadropdown_shadow_top_left"></div>
+<div class="megadropdown_shadow_top_right"></div>
+</div>
+<div class="bd megadropdown_shadow_middle_left">
+<div class="megadd_inner megadropdown_shadow_middle_right">
+<div class="bd">
+<ul class="submenu">
+<li>
+<a title="Swiss e-tickets" href="http://www.sbb.ch/en/travelcards-and-tickets/e-tickets.html" class="secondlevel" tabindex="-1">
+<strong>Swiss e-tickets</strong>
+</a>
+<ul>
+<li>
+<a title="Ticket Shop" href="https://www.sbb.ch/ticketshop/b2c/sprache.do?en" tabindex="-1">
+<strong>Ticket Shop</strong>
+</a>
+</li>
+<li>
+<a title="OnlineTicket" href="http://www.sbb.ch/en/travelcards-and-tickets/e-tickets/online-ticket.html" tabindex="-1">
+<strong>OnlineTicket</strong>
+</a>
+</li>
+<li>
+<a title="MobileTicket" href="http://www.sbb.ch/en/travelcards-and-tickets/e-tickets/mobile-tickets.html" tabindex="-1">
+<strong>MobileTicket</strong>
+</a>
+</li>
+<li>
+<a title="E-voucher" href="http://www.sbb.ch/en/travelcards-and-tickets/e-tickets/e-voucher.html" tabindex="-1">
+<strong>E-voucher</strong>
+</a>
+</li>
+<li>
+<a title="FAQs" href="http://www.sbb.ch/en/travelcards-and-tickets/e-tickets/faq.html" tabindex="-1">
+<strong>FAQs</strong>
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a title="Tickets for Switzerland" href="http://www.sbb.ch/en/travelcards-and-tickets/tickets-for-switzerland.html" class="secondlevel" tabindex="-1">
+<strong>Tickets for Switzerland</strong>
+</a>
+<ul>
+<li>
+<a title="Swiss Pass &amp; more" href="http://www.sbb.ch/en/leisure-holidays/holidays--short-breaks-in-switzerland/swisstravelsystem.html" tabindex="-1">
+<strong>Swiss Pass &amp; more</strong>
+</a>
+</li>
+<li>
+<a title="Individual tickets" href="http://www.sbb.ch/en/travelcards-and-tickets/tickets-for-switzerland/individual-tickets.html" tabindex="-1">
+<strong>Individual tickets</strong>
+</a>
+</li>
+<li>
+<a title="Supersaver tickets" href="http://www.sbb.ch/en/travelcards-and-tickets/tickets-for-switzerland/supersaver-tickets.html" tabindex="-1">
+<strong>Supersaver tickets</strong>
+</a>
+</li>
+<li>
+<a title="1-day travelpass" href="http://www.sbb.ch/en/travelcards-and-tickets/tickets-for-switzerland/1-day-travelpass.html" tabindex="-1">
+<strong>1-day travelpass</strong>
+</a>
+</li>
+<li>
+<a title="First-class upgrade" href="http://www.sbb.ch/en/travelcards-and-tickets/tickets-for-switzerland/class-upgrade.html" tabindex="-1">
+<strong>First-class upgrade</strong>
+</a>
+</li>
+<li>
+<a title="Seat reservations" href="http://www.sbb.ch/en/travelcards-and-tickets/tickets-for-switzerland/seat-reservations.html" tabindex="-1">
+<strong>Seat reservations</strong>
+</a>
+</li>
+<li>
+<a title="Group tickets" href="http://www.sbb.ch/en/travelcards-and-tickets/tickets-for-switzerland/group-tickets.html" tabindex="-1">
+<strong>Group tickets</strong>
+</a>
+</li>
+<li>
+<a title="Children" href="http://www.sbb.ch/en/travelcards-and-tickets/tickets-for-switzerland/children.html" tabindex="-1">
+<strong>Children</strong>
+</a>
+</li>
+<li>
+<a title="Night supplement" href="http://www.sbb.ch/en/travelcards-and-tickets/tickets-for-switzerland/night-supplement.html" tabindex="-1">
+<strong>Night supplement</strong>
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a title="Swiss travelcards" href="http://www.sbb.ch/en/travelcards-and-tickets/railpasses.html" class="secondlevel" tabindex="-1">
+<strong>Swiss travelcards</strong>
+</a>
+<ul>
+<li>
+<a title="GA travelcard" href="http://www.sbb.ch/en/travelcards-and-tickets/railpasses/ga.html" tabindex="-1">
+<strong>GA travelcard</strong>
+</a>
+</li>
+<li>
+<a title="Half-Fare travelcards" href="http://www.sbb.ch/en/travelcards-and-tickets/railpasses/half-fare-travelcard.html" tabindex="-1">
+<strong>Half-Fare travelcards</strong>
+</a>
+</li>
+<li>
+<a title="Track 7" href="http://www.sbb.ch/en/travelcards-and-tickets/railpasses/track-7.html" tabindex="-1">
+<strong>Track 7</strong>
+</a>
+</li>
+<li>
+<a title="Point-to-point travelpass" href="http://www.sbb.ch/en/travelcards-and-tickets/railpasses/point-to-point-season-tickets.html" tabindex="-1">
+<strong>Point-to-point travelpass</strong>
+</a>
+</li>
+<li>
+<a title="Regional travelcards" href="http://www.sbb.ch/en/travelcards-and-tickets/fare-networks.html" tabindex="-1">
+<strong>Regional travelcards</strong>
+</a>
+</li>
+<li>
+<a title="Inter-regional travelcard" href="http://www.sbb.ch/en/travelcards-and-tickets/railpasses/inter-regional%20travelcards.html" tabindex="-1">
+<strong>Inter-regional travelcard</strong>
+</a>
+</li>
+<li>
+<a title="Junior and Grandchild travelcard" href="http://www.sbb.ch/en/travelcards-and-tickets/railpasses/travelling-with-children-and-grandchildren.html" tabindex="-1">
+<strong>Junior and Grandchild travelcard</strong>
+</a>
+</li>
+<li>
+<a title="Find the best travelcard" href="http://www.sbb.ch/en/travelcards-and-tickets/railpasses/new-in-Switzerland.html" tabindex="-1">
+<strong>Find the best travelcard</strong>
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a title="From Switzerland to Europe" href="http://www.sbb.ch/en/travelcards-and-tickets/billette-international.html" class="secondlevel" tabindex="-1">
+<strong>From Switzerland to Europe</strong>
+</a>
+<ul>
+<li>
+<a title="Germany" href="http://www.sbb.ch/en/travelcards-and-tickets/billette-international/germany.html" tabindex="-1">
+<strong>Germany</strong>
+</a>
+</li>
+<li>
+<a title="France" href="http://www.sbb.ch/en/travelcards-and-tickets/billette-international/france.html" tabindex="-1">
+<strong>France</strong>
+</a>
+</li>
+<li>
+<a title="Italy" href="http://www.sbb.ch/en/travelcards-and-tickets/billette-international/italy.html" tabindex="-1">
+<strong>Italy</strong>
+</a>
+</li>
+<li>
+<a title="Austria" href="http://www.sbb.ch/en/travelcards-and-tickets/billette-international/austria.html" tabindex="-1">
+<strong>Austria</strong>
+</a>
+</li>
+<li>
+<a title="Other countries" href="http://www.sbb.ch/en/travelcards-and-tickets/billette-international/other-countries.html" tabindex="-1">
+<strong>Other countries</strong>
+</a>
+</li>
+<li>
+<a title="InterRail passes" href="http://www.sbb.ch/en/leisure-holidays/europe-worldwide/europe-by-train/interrail.html" tabindex="-1">
+<strong>InterRail passes</strong>
+</a>
+</li>
+<li>
+<a title="Railteam" href="http://www.sbb.ch/en/leisure-holidays/europe-worldwide/europe-by-train/weitere-laender-und-angebote/railteam.html" tabindex="-1">
+<strong>Railteam</strong>
+</a>
+</li>
+</ul>
+</li>
+<li class="last">
+<a title="Swiss fare networks" href="http://www.sbb.ch/en/travelcards-and-tickets/fare-networks.html" class="secondlevel" tabindex="-1">
+<strong>Swiss fare networks</strong>
+</a>
+<ul>
+<li>
+<a title="ZVV (Zurich Transport Network) " href="http://www.sbb.ch/en/travelcards-and-tickets/fare-networks/zurich-transport-network.html" tabindex="-1">
+<strong>ZVV (Zurich Transport Network) </strong>
+</a>
+</li>
+<li>
+<a title="TNW (Northwestern Switzerland)" href="http://www.sbb.ch/en/travelcards-and-tickets/fare-networks/northwestern-switzerland-fare-network-tnw.html" tabindex="-1">
+<strong>TNW (Northwestern Switzerland)</strong>
+</a>
+</li>
+<li>
+<a title="Libero (Bern, Solothurn)" href="http://www.sbb.ch/en/travelcards-and-tickets/fare-networks/libero-fare-network.html" tabindex="-1">
+<strong>Libero (Bern, Solothurn)</strong>
+</a>
+</li>
+<li>
+<a title="Passepartout (Lucerne, Obwalden, Nidwalden)" href="http://www.sbb.ch/en/travelcards-and-tickets/fare-networks/lucerne-obwalden-and-nidwalden-fare-network-passepartout.html" tabindex="-1">
+<strong>Passepartout (Lucerne, Obwalden, Nidwalden)</strong>
+</a>
+</li>
+<li>
+<a title="Mobilis (Vaud)" href="http://www.sbb.ch/en/travelcards-and-tickets/fare-networks/vaud-mobilis-fare-network.html" tabindex="-1">
+<strong>Mobilis (Vaud)</strong>
+</a>
+</li>
+<li>
+<a title="unireso (Geneva)" href="http://www.sbb.ch/en/travelcards-and-tickets/fare-networks/geneva-and-region-unireso-fare-network.html" tabindex="-1">
+<strong>unireso (Geneva)</strong>
+</a>
+</li>
+<li>
+<a title="Arcobaleno (Ticino, Moesano)" href="http://www.sbb.ch/en/travelcards-and-tickets/fare-networks/fare-network-ticino-and-moesano-arcobaleno.html" tabindex="-1">
+<strong>Arcobaleno (Ticino, Moesano)</strong>
+</a>
+</li>
+<li>
+<a title="Other fare networks" href="http://www.sbb.ch/en/travelcards-and-tickets/fare-networks/other-fare-networks.html" tabindex="-1">
+<strong>Other fare networks</strong>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ft">
+<div class="megadropdown_shadow_bottom_left"></div>
+<div class="megadropdown_shadow_bottom_right"></div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a title="Station &amp; services" href="http://www.sbb.ch/en/station-services.html" class="toplevel ">
+Station &amp; services<span class="openmenuicon">&nbsp;</span>
+</a>
+<div class="submenu_container">
+<div class="megadropdown">
+<div class="megadropdown_shadow">
+<div class="hd">
+<div class="megadropdown_shadow_top_left"></div>
+<div class="megadropdown_shadow_top_right"></div>
+</div>
+<div class="bd megadropdown_shadow_middle_left">
+<div class="megadd_inner megadropdown_shadow_middle_right">
+<div class="bd">
+<ul class="submenu">
+<li>
+<a title="At the station" href="http://www.sbb.ch/en/station-services/am-bahnhof.html" class="secondlevel" tabindex="-1">
+<strong>At the station</strong>
+</a>
+<ul>
+<li>
+<a title="Our rail stations" href="http://www.sbb.ch/en/station-services/am-bahnhof/railway-stations.html" tabindex="-1">
+<strong>Our rail stations</strong>
+</a>
+</li>
+<li>
+<a title="Shopping &amp; Gastro" href="http://www.sbb.ch/en/station-services/am-bahnhof/shopping-gastronomy.html" tabindex="-1">
+<strong>Shopping &amp; Gastro</strong>
+</a>
+</li>
+<li>
+<a title="Further services" href="http://www.sbb.ch/en/station-services/am-bahnhof/dhl-service-point.html" tabindex="-1">
+<strong>Further services</strong>
+</a>
+</li>
+<li>
+<a title="SBB Businesspoint" href="http://www.sbb.ch/en/station-services/am-bahnhof/businesspoint.html" tabindex="-1">
+<strong>SBB Businesspoint</strong>
+</a>
+</li>
+<li>
+<a title="SBB Travel Agency" href="http://www.sbb.ch/en/station-services/am-bahnhof/travel-agency.html" tabindex="-1">
+<strong>SBB Travel Agency</strong>
+</a>
+</li>
+<li>
+<a title="Event tickets" href="http://www.sbb.ch/en/station-services/am-bahnhof/event-tickets.html" tabindex="-1">
+<strong>Event tickets</strong>
+</a>
+</li>
+<li>
+<a title="Rail Style" href="http://www.sbb.ch/en/station-services/am-bahnhof/railstyle.html" tabindex="-1">
+<strong>Rail Style</strong>
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a title="Services" href="http://www.sbb.ch/en/station-services/services.html" class="secondlevel" tabindex="-1">
+<strong>Services</strong>
+</a>
+<ul>
+<li>
+<a title="Change/currency exchange" href="http://www.sbb.ch/en/station-services/services/change-currency-exchange.html" tabindex="-1">
+<strong>Change/currency exchange</strong>
+</a>
+</li>
+<li>
+<a title="Western Union" href="http://www.sbb.ch/en/station-services/services/western-union.html" tabindex="-1">
+<strong>Western Union</strong>
+</a>
+</li>
+<li>
+<a title="Prepaid mobiles and subscriptions" href="http://www.sbb.ch/en/station-services/services/prepaid-mobile.html" tabindex="-1">
+<strong>Prepaid mobiles and subscriptions</strong>
+</a>
+</li>
+<li>
+<a title="Financial Services and Insurances" href="http://www.sbb.ch/en/station-services/services/financial-services-at-the-station.html" tabindex="-1">
+<strong>Financial Services and Insurances</strong>
+</a>
+</li>
+<li>
+<a title="Luggage" href="http://www.sbb.ch/en/station-services/services/baggage.html" tabindex="-1">
+<strong>Luggage</strong>
+</a>
+</li>
+<li>
+<a title="Lost property service" href="http://www.sbb.ch/en/station-services/services/lost-property-service.html" tabindex="-1">
+<strong>Lost property service</strong>
+</a>
+</li>
+<li>
+<a title="Customer service" href="http://www.sbb.ch/en/station-services/services/sbb-customer-service.html" tabindex="-1">
+<strong>Customer service</strong>
+</a>
+</li>
+<li>
+<a title="Gift ideas" href="http://www.sbb.ch/en/station-services/services/gift-ideas.html" tabindex="-1">
+<strong>Gift ideas</strong>
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a title="On the train" href="http://www.sbb.ch/en/station-services/on-the-train.html" class="secondlevel" tabindex="-1">
+<strong>On the train</strong>
+</a>
+<ul>
+<li>
+<a title="Rail catering" href="http://www.sbb.ch/en/station-services/on-the-train/rail-catering.html" tabindex="-1">
+<strong>Rail catering</strong>
+</a>
+</li>
+<li>
+<a title="On-board service" href="http://www.sbb.ch/en/station-services/on-the-train/on-board-service.html" tabindex="-1">
+<strong>On-board service</strong>
+</a>
+</li>
+<li>
+<a title="Families" href="http://www.sbb.ch/en/station-services/on-the-train/family.html" tabindex="-1">
+<strong>Families</strong>
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a title="Bicycle and car" href="http://www.sbb.ch/en/station-services/car-bike.html" class="secondlevel" tabindex="-1">
+<strong>Bicycle and car</strong>
+</a>
+<ul>
+<li>
+<a title="Park at the station" href="http://www.sbb.ch/en/station-services/car-bike/parking.html" tabindex="-1">
+<strong>Park at the station</strong>
+</a>
+</li>
+<li>
+<a title="On the move by bike" href="http://www.sbb.ch/en/station-services/car-bike/on-the-move-by-bike.html" tabindex="-1">
+<strong>On the move by bike</strong>
+</a>
+</li>
+<li>
+<a title="Hire or borrow" href="http://www.sbb.ch/en/station-services/car-bike/hire-or-borrow.html" tabindex="-1">
+<strong>Hire or borrow</strong>
+</a>
+</li>
+<li>
+<a title="From door to door" href="http://www.sbb.ch/en/station-services/car-bike/smart-combinations.html" tabindex="-1">
+<strong>From door to door</strong>
+</a>
+</li>
+<li>
+<a title="Car trains" href="http://www.sbb.ch/en/station-services/car-bike/car-trains.html" tabindex="-1">
+<strong>Car trains</strong>
+</a>
+</li>
+</ul>
+</li>
+<li class="last">
+<a title="Passengers with a handicap" href="http://www.sbb.ch/en/station-services/passengers-with-a-handicap.html" class="secondlevel" tabindex="-1">
+<strong>Passengers with a handicap</strong>
+</a>
+<ul>
+<li>
+<a title="SBB Call Center Handicap" href="http://www.sbb.ch/en/station-services/passengers-with-a-handicap/sbb-call-center-handicap.html" tabindex="-1">
+<strong>SBB Call Center Handicap</strong>
+</a>
+</li>
+<li>
+<a title="Travel discount" href="http://www.sbb.ch/en/station-services/passengers-with-a-handicap/travel-discount.html" tabindex="-1">
+<strong>Travel discount</strong>
+</a>
+</li>
+<li>
+<a title="Independent travel" href="http://www.sbb.ch/en/station-services/passengers-with-a-handicap/autonomesreisen.html" tabindex="-1">
+<strong>Independent travel</strong>
+</a>
+</li>
+<li>
+<a title="International traffic" href="http://www.sbb.ch/en/station-services/passengers-with-a-handicap/international-traffic.html" tabindex="-1">
+<strong>International traffic</strong>
+</a>
+</li>
+<li>
+<a title="Wheelchair / walking impaired" href="http://www.sbb.ch/en/station-services/passengers-with-a-handicap/wheelchair-walking-impaired.html" tabindex="-1">
+<strong>Wheelchair / walking impaired</strong>
+</a>
+</li>
+<li>
+<a title="Hearing impaired" href="http://www.sbb.ch/en/station-services/passengers-with-a-handicap/hearing-impaired.html" tabindex="-1">
+<strong>Hearing impaired</strong>
+</a>
+</li>
+<li>
+<a title="Blind and sight impaired" href="http://www.sbb.ch/en/station-services/passengers-with-a-handicap/blind-and-sight-impaired.html" tabindex="-1">
+<strong>Blind and sight impaired</strong>
+</a>
+</li>
+<li>
+<a title="Links" href="http://www.sbb.ch/en/station-services/passengers-with-a-handicap/links.html" tabindex="-1">
+<strong>Links</strong>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ft">
+<div class="megadropdown_shadow_bottom_left"></div>
+<div class="megadropdown_shadow_bottom_right"></div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a title="Business travel" href="http://www.sbb.ch/en/business-travel.html" class="toplevel ">
+Business travel<span class="openmenuicon">&nbsp;</span>
+</a>
+<div class="submenu_container">
+<div class="megadropdown">
+<div class="megadropdown_shadow">
+<div class="hd">
+<div class="megadropdown_shadow_top_left"></div>
+<div class="megadropdown_shadow_top_right"></div>
+</div>
+<div class="bd megadropdown_shadow_middle_left">
+<div class="megadd_inner megadropdown_shadow_middle_right">
+<div class="bd">
+<ul class="submenu">
+<li>
+<a title="SBB Businesstravel" href="http://www.sbb.ch/en/business-travel/businesstravel.html" class="secondlevel" tabindex="-1">
+<strong>SBB Businesstravel</strong>
+</a>
+<ul>
+<li>
+<a title="Ticket Shop Business" href="http://www.sbb.ch/en/business-travel/businesstravel/ticket-shop-business.html" tabindex="-1">
+<strong>Ticket Shop Business</strong>
+</a>
+</li>
+<li>
+<a title="SBB Businessmanager" href="http://www.sbb.ch/en/business-travel/businesstravel/sbb-businessmanager.html" tabindex="-1">
+<strong>SBB Businessmanager</strong>
+</a>
+</li>
+<li>
+<a title="SBB Mobile Business" href="http://www.sbb.ch/en/business-travel/businesstravel/sbb-mobile-business.html" tabindex="-1">
+<strong>SBB Mobile Business</strong>
+</a>
+</li>
+<li>
+<a title="Register company" href="http://www.sbb.ch/en/business-travel/ticketshop/anmeldung.html" tabindex="-1">
+<strong>Register company</strong>
+</a>
+</li>
+<li>
+<a title="SBB Businesscard" href="http://www.sbb.ch/en/business-travel/businesstravel/sbb-businesscard.html" tabindex="-1">
+<strong>SBB Businesscard</strong>
+</a>
+</li>
+<li>
+<a title="Product range" href="http://www.sbb.ch/en/business-travel/businesstravel/product-range.html" tabindex="-1">
+<strong>Product range</strong>
+</a>
+</li>
+<li>
+<a title="Help / FAQ " href="http://www.sbb.ch/en/business-travel/businesstravel/questions.html" tabindex="-1">
+<strong>Help / FAQ </strong>
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a title="Travel" href="http://www.sbb.ch/en/business-travel/travel.html" class="secondlevel" tabindex="-1">
+<strong>Travel</strong>
+</a>
+<ul>
+<li>
+<a title="Switzerland business travel " href="http://www.sbb.ch/en/business-travel/travel/business-travel-national-from-city-to-city.html" tabindex="-1">
+<strong>Switzerland business travel </strong>
+</a>
+</li>
+<li>
+<a title="International business travel" href="http://www.sbb.ch/en/business-travel/travel/international.html" tabindex="-1">
+<strong>International business travel</strong>
+</a>
+</li>
+<li>
+<a title="Commuting to work" href="http://www.sbb.ch/en/business-travel/travel/the-journey-to-work-commuting.html" tabindex="-1">
+<strong>Commuting to work</strong>
+</a>
+</li>
+<li>
+<a title="Business events" href="http://www.sbb.ch/en/business-travel/travel/events-special-tickets.html" tabindex="-1">
+<strong>Business events</strong>
+</a>
+</li>
+<li>
+<a title="On-board service" href="http://www.sbb.ch/en/business-travel/travel/service-im-zug.html" tabindex="-1">
+<strong>On-board service</strong>
+</a>
+</li>
+<li>
+<a title="Combined mobility" href="http://www.sbb.ch/en/business-travel/travel/combined-mobility.html" tabindex="-1">
+<strong>Combined mobility</strong>
+</a>
+</li>
+<li>
+<a title="Guests from abroad" href="http://www.sbb.ch/en/business-travel/travel/gaeste-ausland.html" tabindex="-1">
+<strong>Guests from abroad</strong>
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a title="Mobility advice" href="http://www.sbb.ch/en/business-travel/services.html" class="secondlevel" tabindex="-1">
+<strong>Mobility advice</strong>
+</a>
+<ul>
+<li>
+<a title="Optimise costs" href="http://www.sbb.ch/en/business-travel/services/cost-reduction-procedures.html" tabindex="-1">
+<strong>Optimise costs</strong>
+</a>
+</li>
+<li>
+<a title="Green travel" href="http://www.sbb.ch/en/business-travel/services/travel-ecologically.html" tabindex="-1">
+<strong>Green travel</strong>
+</a>
+</li>
+<li>
+<a title="Make full use of your travel time" href="http://www.sbb.ch/en/business-travel/services/online-booking-and-administration.html" tabindex="-1">
+<strong>Make full use of your travel time</strong>
+</a>
+</li>
+<li>
+<a title="Mobility advice" href="http://www.sbb.ch/en/business-travel/services/consultancy-mobility-advice.html" tabindex="-1">
+<strong>Mobility advice</strong>
+</a>
+</li>
+<li>
+<a title="Enquiries" href="http://www.sbb.ch/en/business-travel/services/businesstravel-service-center%20.html" tabindex="-1">
+<strong>Enquiries</strong>
+</a>
+</li>
+<li>
+<a title="References" href="http://www.sbb.ch/en/business-travel/services/references.html" tabindex="-1">
+<strong>References</strong>
+</a>
+</li>
+</ul>
+</li>
+<li class="last">
+<a title="News" href="http://www.sbb.ch/en/business-travel/businesstravel-about-us.html" class="secondlevel" tabindex="-1">
+<strong>News</strong>
+</a>
+<ul>
+<li>
+<a title="Print out tickets to Italy in the office" href="http://www.sbb.ch/en/business-travel/businesstravel-about-us/billette-italien.html" tabindex="-1">
+<strong>Print out tickets to Italy in the office</strong>
+</a>
+</li>
+<li>
+<a title="SBB Businesspoint in Geneva" href="http://www.sbb.ch/en/station-services/am-bahnhof/businesspoint.html" tabindex="-1">
+<strong>SBB Businesspoint in Geneva</strong>
+</a>
+</li>
+<li>
+<a title="Expo Milano 2015" href="http://www.sbb.ch/en/business-travel/businesstravel-about-us/expo-milano-2015.html" tabindex="-1">
+<strong>Expo Milano 2015</strong>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ft">
+<div class="megadropdown_shadow_bottom_left"></div>
+<div class="megadropdown_shadow_bottom_right"></div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a title="Group" href="http://www.sbb.ch/en/group.html" class="toplevel ">
+Group<span class="openmenuicon">&nbsp;</span>
+</a>
+<div class="submenu_container">
+<div class="megadropdown">
+<div class="megadropdown_shadow">
+<div class="hd">
+<div class="megadropdown_shadow_top_left"></div>
+<div class="megadropdown_shadow_top_right"></div>
+</div>
+<div class="bd megadropdown_shadow_middle_left">
+<div class="megadd_inner megadropdown_shadow_middle_right">
+<div class="bd">
+<ul class="submenu">
+<li>
+<a title="The company" href="http://www.sbb.ch/en/group/the-company.html" class="secondlevel" tabindex="-1">
+<strong>The company</strong>
+</a>
+<ul>
+<li>
+<a title="Organisation" href="http://www.sbb.ch/en/group/the-company/organisation.html" tabindex="-1">
+<strong>Organisation</strong>
+</a>
+</li>
+<li>
+<a title="SBB Brand" href="http://www.sbb.ch/en/group/the-company/sbb-brand/ci-net.html" tabindex="-1">
+<strong>SBB Brand</strong>
+</a>
+</li>
+<li>
+<a title="Facts and figures" href="http://www.sbb.ch/en/group/the-company/facts-and-figures.html" tabindex="-1">
+<strong>Facts and figures</strong>
+</a>
+</li>
+<li>
+<a title="Projects" href="http://www.sbb.ch/en/group/the-company/projects/upgrading-the-rail-network.html" tabindex="-1">
+<strong>Projects</strong>
+</a>
+</li>
+<li>
+<a title="SBB keeps Switzerland moving" href="http://www.sbb.ch/en/group/the-company/sbb-keeps-switzerland-moving.html" tabindex="-1">
+<strong>SBB keeps Switzerland moving</strong>
+</a>
+</li>
+<li>
+<a title="SBB and the environment" href="http://www.sbb.ch/en/group/the-company/der-umwelt-verpflichtet.html" tabindex="-1">
+<strong>SBB and the environment</strong>
+</a>
+</li>
+<li>
+<a title="History" href="http://www.sbb.ch/en/group/the-company/history.html" tabindex="-1">
+<strong>History</strong>
+</a>
+</li>
+<li>
+<a title="SBB for schools" href="http://www.sbb.ch/en/group/the-company/abb-for-schools.html" tabindex="-1">
+<strong>SBB for schools</strong>
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a title="SBB as business partner" href="http://www.sbb.ch/en/group/sbb-as-business-partner.html" class="secondlevel" tabindex="-1">
+<strong>SBB as business partner</strong>
+</a>
+<ul>
+<li>
+<a title="Rail freight" href="http://www.sbb.ch/en/group/sbb-as-business-partner/rail-freight.html" tabindex="-1">
+<strong>Rail freight</strong>
+</a>
+</li>
+<li>
+<a title="Federal Government, Cantons, Communes, private entities" href="http://www.sbb.ch/en/group/sbb-as-business-partner/federal-government-cantons.html" tabindex="-1">
+<strong>Federal Government, Cantons, Communes, private entities</strong>
+</a>
+</li>
+<li>
+<a title="Welcome to SBB Purchasing" href="http://www.sbb.ch/en/group/sbb-as-business-partner/welcome-to-sbb-purchasing.html" tabindex="-1">
+<strong>Welcome to SBB Purchasing</strong>
+</a>
+</li>
+<li>
+<a title="RailAdvertising" href="http://www.sbb.ch/en/group/sbb-as-business-partner/railadvertising.html" tabindex="-1">
+<strong>RailAdvertising</strong>
+</a>
+</li>
+<li>
+<a title="Partnerships" href="http://www.sbb.ch/en/group/sbb-as-business-partner/partnerships.html" tabindex="-1">
+<strong>Partnerships</strong>
+</a>
+</li>
+<li>
+<a title="Services for RUs" href="http://www.sbb.ch/en/group/sbb-as-business-partner/offers-for-rus.html" tabindex="-1">
+<strong>Services for RUs</strong>
+</a>
+</li>
+<li>
+<a title="Fleet &amp; maintenance" href="http://www.sbb.ch/en/group/sbb-as-business-partner/fleet-maintenance.html" tabindex="-1">
+<strong>Fleet &amp; maintenance</strong>
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a title="Real estate" href="http://www.sbb.ch/en/group/real-estate.html" class="secondlevel" tabindex="-1">
+<strong>Real estate</strong>
+</a>
+<ul>
+<li>
+<a title="Properties for rent" href="http://www.sbb.ch/en/group/real-estate/properties-for-rent.html" tabindex="-1">
+<strong>Properties for rent</strong>
+</a>
+</li>
+<li>
+<a title="Properties for sale" href="http://www.sbb.ch/en/group/real-estate/properties-for-sale%20.html" tabindex="-1">
+<strong>Properties for sale</strong>
+</a>
+</li>
+<li>
+<a title="Current projects" href="http://www.sbb.ch/en/group/real-estate/current-projects.html" tabindex="-1">
+<strong>Current projects</strong>
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a title="Jobs &amp; careers" href="http://www.sbb.ch/en/group/jobs-careers.html" class="secondlevel" tabindex="-1">
+<strong>Jobs &amp; careers</strong>
+</a>
+<ul>
+<li>
+<a title="Job offers" href="http://www.sbb.ch/en/group/jobs-careers/job-offers/job-search.html" tabindex="-1">
+<strong>Job offers</strong>
+</a>
+</li>
+<li>
+<a title="Working for SBB" href="http://www.sbb.ch/en/group/jobs-careers/working-for-sbb.html" tabindex="-1">
+<strong>Working for SBB</strong>
+</a>
+</li>
+<li>
+<a title="For experienced employees" href="http://www.sbb.ch/en/group/jobs-careers/experienced-employees.html" tabindex="-1">
+<strong>For experienced employees</strong>
+</a>
+</li>
+<li>
+<a title="For students &amp; graduates" href="http://www.sbb.ch/en/group/jobs-careers/studying-graduates.html" tabindex="-1">
+<strong>For students &amp; graduates</strong>
+</a>
+</li>
+<li>
+<a title="For schoolchildren" href="http://www.sbb.ch/en/group/jobs-careers/schoolchildren.html" tabindex="-1">
+<strong>For schoolchildren</strong>
+</a>
+</li>
+<li>
+<a title="For staff" href="http://www.sbb.ch/content/sbb/en/desktop/sbb-konzern/jobs-karriere/mitarbeitende.html" tabindex="-1">
+<strong>For staff</strong>
+</a>
+</li>
+</ul>
+</li>
+<li class="last">
+<a title="Media" href="http://www.sbb.ch/en/group/media.html" class="secondlevel" tabindex="-1">
+<strong>Media</strong>
+</a>
+<ul>
+<li>
+<a title="Press releases" href="http://www.sbb.ch/en/group/media/press.html" tabindex="-1">
+<strong>Press releases</strong>
+</a>
+</li>
+<li>
+<a title="Archive" href="http://www.sbb.ch/en/group/media/archive.html" tabindex="-1">
+<strong>Archive</strong>
+</a>
+</li>
+<li>
+<a title="Background information" href="http://www.sbb.ch/en/group/media/dossier-medienschaffende.html" tabindex="-1">
+<strong>Background information</strong>
+</a>
+</li>
+<li>
+<a title="Publications" href="http://www.sbb.ch/en/group/media/publications.html" tabindex="-1">
+<strong>Publications</strong>
+</a>
+</li>
+<li>
+<a title="Film &amp; photo projects" href="http://www.sbb.ch/en/group/media/film--photo-projects-on-sbb-owned-property.html" tabindex="-1">
+<strong>Film &amp; photo projects</strong>
+</a>
+</li>
+<li>
+<a title="Contact Media Relations" href="http://www.sbb.ch/en/group/media/contact-media-relations.html" tabindex="-1">
+<strong>Contact Media Relations</strong>
+</a>
+</li>
+<li>
+<a title="Social Media" href="http://www.sbb.ch/en/group/media/social-media.html" tabindex="-1">
+<strong>Social Media</strong>
+</a>
+</li>
+<li>
+<a title="SBB media center" href="http://www.sbb.ch/en/group/media/fotogalerie.html" tabindex="-1">
+<strong>SBB media center</strong>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ft">
+<div class="megadropdown_shadow_bottom_left"></div>
+<div class="megadropdown_shadow_bottom_right"></div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="right megadropdownAlignRight megadropdownLogin">
+<a class="toplevel" href="https://www.sbb.ch/en/meta/login.html" title="Login">
+Login <span class="openmenuicon">&nbsp;</span>
+</a>
+<div class="submenu_container">
+<div class="login">
+<div class="mod modMainmenuLogin"><div class="inner">
+<span class="openmenuicon"></span>
+<div class="megadropdown">
+<div class="megadropdown_shadow">
+<div class="hd">
+<div class="megadropdown_shadow_top_left"></div>
+<div class="megadropdown_shadow_top_right"></div>
+</div>
+<div class="bd megadropdown_shadow_middle_left">
+<div class="megadd_inner megadropdown_shadow_middle_right">
+<div class="back"></div>
+<div class="bd">
+<div class="head-bg"></div>
+<div class="accordion">
+<div class="inner">
+<div class="bd">
+<div class="expandableElmt expandableElmt1 borderRadiusSmall expand preexpand">
+<!--[if IE]><div class="tl"></div><div class="tr"></div><![endif]-->
+<div class="hd expandableHead">
+<h2 class="base">Ticket Shop for private customers<span></span></h2>
+</div>
+<div class="bd expandableBody">
+<form method="post" action="https://www.sbb.ch/en/ticketshop/b2c/logon.do?sprache=en">
+<p class="title"></p>
+<div class="logininput" name="loginName">
+<span><label style="display: block;" for="logon.username1">Username</label></span><input type="inputtext" id="logon.username1" name="logon.username" class="inputtextRounded" autocomplete="off">
+</div>
+<div class="logininput" name="loginPass">
+<span><label style="display: block;" for="logon.password1">Password</label></span><input type="password" id="logon.password1" name="logon.password" class="inputtextRounded" autocomplete="off">
+</div>
+<div class="buttonwrap">
+<button class="redButton">Login</button>
+</div>
+<p class="base"></p>
+<ul class="linklist">
+<li><a class="iconlink" href="https://www.sbb.ch/en/ticketshop/b2c/register.do?sprache=en">Not yet registered?</a></li>
+<li><a class="iconlink" href="https://www.sbb.ch/en/ticketshop/b2c/zugangsdatenVergessen.do?sprache=en">Forgot your login data?</a></li>
+</ul>
+</form>
+</div>
+<!--[if IE]><div class="bl"></div><div class="br"></div><![endif]-->
+</div>
+<div class="expandableElmt expandableElmt2 borderRadiusSmall">
+<!--[if IE]><div class="tl"></div><div class="tr"></div><![endif]-->
+<div class="hd expandableHead">
+<h2 class="base">Ticket Shop Business<span></span></h2>
+</div>
+<div class="bd expandableBody">
+<form method="post" action="https://www.sbb.ch/en/ticketshop/b2b/logon.do?sprache=en">
+<p class="title"></p>
+<div class="logininput" name="loginName">
+<span><label style="display: block;" for="logon.username2">Username</label></span><input type="inputtext" id="logon.username2" name="logon.username" class="inputtextRounded" autocomplete="off">
+</div>
+<div class="logininput" name="loginPass">
+<span><label style="display: block;" for="logon.password2">Password</label></span><input type="password" id="logon.password2" name="logon.password" class="inputtextRounded" autocomplete="off">
+</div>
+<div name="loginNumber" class="logininput">
+<span><label style="display: block;" for="logon.vertragNrString2">Contract number</label></span><input class="inputtextRounded" type="inputtext" id="logon.vertragNrString2" name="logon.vertragNrString" autocomplete="off"/>
+</div>
+<div class="buttonwrap">
+<button class="redButton">Login</button>
+</div>
+<p class="base"></p>
+<ul class="linklist">
+<li><a class="iconlink" href="https://www.sbb.ch/en/ticketshop/b2b/register.do?sprache=en">Not yet registered?</a></li>
+<li><a class="iconlink" href="https://www.sbb.ch/en/ticketshop/b2b/zugangsdatenVergessen.do?sprache=en">Forgot your login data?</a></li>
+</ul>
+</form>
+</div>
+<!--[if IE]><div class="bl"></div><div class="br"></div><![endif]-->
+</div>
+<div class="expandableElmt expandableElmt3 borderRadiusSmall">
+<!--[if IE]><div class="tl"></div><div class="tr"></div><![endif]-->
+<div class="hd expandableHead">
+<h2 class="base">Businessmanager<span></span></h2>
+</div>
+<div class="bd expandableBody">
+<form method="post" action="https://www.sbb.ch/en/geschaeftsreisen-bm/logon.do?sprache=en">
+<p class="title"></p>
+<div class="logininput" name="loginName">
+<span><label style="display: block;" for="logon.username3">Username</label></span><input type="inputtext" id="logon.username3" name="logon.username" class="inputtextRounded" autocomplete="off">
+</div>
+<div class="logininput" name="loginPass">
+<span><label style="display: block;" for="logon.password3">Password</label></span><input type="password" id="logon.password3" name="logon.password" class="inputtextRounded" autocomplete="off">
+</div>
+<div name="loginNumber" class="logininput">
+<span><label style="display: block;" for="logon.vertragNr3">Contract number</label></span><input class="inputtextRounded" type="inputtext" id="logon.vertragNr3" name="logon.vertragNr" autocomplete="off"/>
+</div>
+<input type="hidden" name="method:login" value="Login"/>
+<div class="buttonwrap">
+<button class="redButton">Login</button>
+</div>
+<p class="base"></p>
+<ul class="linklist">
+<li><a class="iconlink externallink" href="" target="_blank"></a></li>
+<li><a class="iconlink" href="https://www.sbb.ch/en/businesstravel-bm/zugangsdatenVergessen.do?sprache=en">Forgot your login data?</a></li>
+</ul>
+</form>
+</div>
+<!--[if IE]><div class="bl"></div><div class="br"></div><![endif]-->
+</div>
+</div>
+</div>
+</div>
+<div class="foot-bg"></div>
+</div>
+</div>
+</div>
+<div class="ft">
+<div class="megadropdown_shadow_bottom_left"></div>
+<div class="megadropdown_shadow_bottom_right"></div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="body">
+<div class="content-wrapper" id="Contents">
+<div class="inner layoutInner">
+<div class="sbb-5col">
+<div class="main mainBd sbb-5col sbb-col-middle">
+<div class="sbb-col-inner">
+<div class="hd layoutHd">
+<div class="bg-corner-topleft"></div>
+<div class="bg-corner-topright"></div>
+</div>
+<div class="bd layoutBd">
+<div class="line">
+<div class="main mainBd sbb-4col">
+<div class="line mainHd">
+<div class="unit size1Of1">
+<h1 class="base">
+Departure &amp; Arrival.
+</h1>
+<div class="parbase socialmedialinks">
+<div class="mod modSocialMedia">
+<div class="inner"><div class="bd">
+<ul class="line">
+<li class="sharing">
+<a class="share" href="#social" title="Share"><span>Share</span></a>
+<ul class="sharingList">
+<li><a href="https://plus.google.com/share?url=http%3A%2F%2Ffahrplan.sbb.ch%2Fbin%2Fquery.exe%2Fen" title="Google+" class="noexternallink externallink" style="background: url('/fahrplan_en/content/dam/sbb/all/bilder/15_SocialMediaIcons_15x15/gplus-15x15.gif') no-repeat scroll left top transparent;" target="_blank">
+<span>Google+</span></a></li>
+<li><a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Ffahrplan.sbb.ch%2Fbin%2Fquery.exe%2Fen&amp;t=Online+timetable." title="Facebook" class="noexternallink externallink" style="background: url('/fahrplan_en/content/dam/sbb/all/bilder/15_SocialMediaIcons_15x15/tooltips_facebook.gif') no-repeat scroll left top transparent;" target="_blank">
+<span>Facebook</span></a></li>
+<li><a href="http://twitter.com/home?status=Have+you+seen%3F+SBB:+Online+timetable.+http%3A%2F%2Ffahrplan.sbb.ch%2Fbin%2Fquery.exe%2Fen+" title="Twitter" class="noexternallink externallink" style="background: url('/fahrplan_en/content/dam/sbb/all/bilder/15_SocialMediaIcons_15x15/tooltips_twitter.gif') no-repeat scroll left top transparent;" target="_blank">
+<span>Twitter</span></a></li>
+</ul>
+</li>
+</ul>
+</div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="line">
+<div class="rightCol sbb-1col sbb-col-left-margin">
+<div class="line sbb-col-teaser offtime">
+<div class="hd layoutHd">
+<div class="bg-corner-topleft"></div>
+<div class="bg-corner-topright"></div>
+</div>
+<div class="bd layoutBd">
+<div class="line">
+<div class="mod modGhettobox skinGhettoboxBlue">
+<div class="inner" id="ghettob2cteaser">
+<a href="http://www.sbb.ch/en/travelcards-and-tickets/e-tickets/shop-maintenance.html?WT.ac=ticketshop-wartung-en" class="noexternalicon">
+<div class="borderRadiusSmall bg">
+<div class="data-time">
+<span class="data-ontime">2014-11-18 15:45:00</span>
+<span class="data-offtime">2014-11-18 23:00:00</span>
+</div>
+<!--[if IE]><div class="tl"></div><div class="tr"></div><![endif]-->
+<div class="innerBox">
+<div class="hd">
+<h2 class="base">
+Maintenance work at Ticket Shop.
+</h2>
+</div>
+<div class="bd richtext">
+<p>There is no access to Ticket Shop from 18.11.2014, 22:00 to 19.11.2014, 03:00, due to maintenance work.<br/>
+</p>
+</div>
+</div>
+<!--[if IE]><div class="bl"></div><div class="br"></div><![endif]-->
+</div>
+<div class="nhIcon linkArrow">&nbsp;</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="ft layoutFt">
+<div class="bg-corner-bottomleft"></div>
+<div class="bg-corner-bottomright"></div>
+</div>
+</div>
+<div class="teaserreferencerotating parbase section">
+<div class="line sbb-col-teaser">
+<div class="hd layoutHd">
+<div class="bg-corner-topleft"></div>
+<div class="bg-corner-topright"></div>
+</div>
+<div class="bd layoutBd">
+<div class="line">
+<div class="mod modLinkTeaser skinLinkTeaserRotating">
+<div class="media noscript">
+<div class="scrollable">
+<div class="autoplayIntervall">
+5000
+</div>
+<div class="items">
+<div class="line sbb-col-teaser">
+<div class="hd layoutHd">
+<div class="bg-corner-topleft"></div>
+<div class="bg-corner-topright"></div>
+</div>
+<div class="bd layoutBd">
+<div class="line">
+<!-- mod LinkTeaser START -->
+<div class="mod modLinkTeaser"><!-- tpl LinkTeaser-linkteaserImageText START -->
+<div class="media">
+<a class="img" href="http://www.sbb.ch/en/leisure-holidays/day-trips/ideas-for-your-freetime.html" title="Holidays & leisure." id="textimageteaser-ideenfinder">
+<img src="/fahrplan_en/content/sbb/en/desktop/teaser/ideenfinder/_jcr_content/image.spooler.spoolimage.161.png/1354806289921.png" alt="Holidays &amp; leisure." title="" width="161" height="133"/>
+<div class="bd">
+<h2>Excursion ideas for up to 50% less.</h2>
+Find your favourite excursions and benefit from reduced RailAway offers.
+</div>
+</a>
+</div>
+<!-- /tpl LinkTeaser-linkteaserImageText END -->
+</div><!-- /mod LinkTeaser END -->
+</div>
+</div>
+<div class="ft layoutFt">
+<div class="bg-corner-bottomleft"></div>
+<div class="bg-corner-bottomright"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="ft layoutFt">
+<div class="bg-corner-bottomleft"></div>
+<div class="bg-corner-bottomright"></div>
+</div>
+</div>
+</div>
+<form method="post" id="extra-information" action="#">
+<input type="hidden" value="UTF-8" name="_charset_"/>
+</form>
+<div id="extra-information-box" class="mod modLinkTeaser skinLinkTeaserFahrplanExtra">
+<div class="borderRadiusSmall bg">
+<div class="inner">
+<div class="hd">
+<h2 class="base">Additional information</h2>
+</div>
+<div class="bd bdNoClipping">
+<form action="#">
+<fieldset class="base">
+<ol>
+<li class="radio">
+<input type="radio" value="true" id="extra-information-select-s" name="hf_start" class="radio">
+<label for="extra-information-select-s" class="base" id="extra-information-select-label-s"></label>
+</li>
+<li class="radio">
+<input type="radio" value="false" id="extra-information-select-d" name="hf_start" class="radio">
+<label for="extra-information-select-d" class="base" id="extra-information-select-label-d"></label>
+</li>
+</ol>
+</fieldset>
+<ul id="extra-information-follow-list" class="buttonlist">
+<li><a class="greyButton borderRadiusSmall" href="http://www.sbb.ch/bin/zusatzinfos/data.en.kombiniert.html"><!--[if IE]><small class="tl"></small><small class="tr"></small><![endif]--><span>Combined mobility</span><!--[if IE]><small class="bl"></small><small class="br"></small><![endif]--></a></li>
+<li><a class="greyButton borderRadiusSmall" href="http://www.sbb.ch/bin/zusatzinfos/data.en.freizeit.html"><!--[if IE]><small class="tl"></small><small class="tr"></small><![endif]--><span>Leisure travel offers</span><!--[if IE]><small class="bl"></small><small class="br"></small><![endif]--></a></li>
+<li><a class="greyButton borderRadiusSmall" href="http://www.sbb.ch/bin/zusatzinfos/data.en.bahnhof.html"><!--[if IE]><small class="tl"></small><small class="tr"></small><![endif]--><span>At the station</span><!--[if IE]><small class="bl"></small><small class="br"></small><![endif]--></a></li>
+<li><a class="greyButton borderRadiusSmall" href="http://www.sbb.ch/bin/zusatzinfos/data.en.hotel.html"><!--[if IE]><small class="tl"></small><small class="tr"></small><![endif]--><span>Book hotel</span><!--[if IE]><small class="bl"></small><small class="br"></small><![endif]--></a></li>
+<li><a class="greyButton borderRadiusSmall" href="http://www.sbb.ch/bin/zusatzinfos/data.en.handicap.html"><!--[if IE]><small class="tl"></small><small class="tr"></small><![endif]--><span>Disabled passengers </span><!--[if IE]><small class="bl"></small><small class="br"></small><![endif]--></a></li>
+<li><a class="greyButton borderRadiusSmall extraInfoNoFormPost" href="http://www.sbb.ch/bin/zusatzinfos/data.en.bahnverkehr.html"><!--[if IE]><small class="tl"></small><small class="tr"></small><![endif]--><span>Rail information</span><!--[if IE]><small class="bl"></small><small class="br"></small><![endif]--></a></li>
+<li><a class="greyButton borderRadiusSmall" href="http://www.sbb.ch/bin/zusatzinfos/data.en.rundUmDenBahnhof.html"><!--[if IE]><small class="tl"></small><small class="tr"></small><![endif]--><span>Around the station</span><!--[if IE]><small class="bl"></small><small class="br"></small><![endif]--></a></li>
+</ul>
+</form>
+</div>
+</div>
+<!--[if IE]><div class="tl"></div><div class="tr"></div><![endif]-->
+<!--[if IE]><div class="bl"></div><div class="br"></div><![endif]-->
+</div>
+</div>
+<div id="extra-information-weather-s" class="hidden">
+<!-- empty -->
+</div>
+<div id="extra-information-weather-d">
+<script type="text/javascript">
+/* <![CDATA[ */
+var tWeekdays = ["Su","Mo","Tu","We","Th","Fr","Sa","Su"];
+var iconTexts = ["-","sunny","mostly sunny","partly cloudy","cloudy","rain","rain and snow, sleet","snow","hail, graupel","rain shower","snow shower","sleet shower","fog","stratus","slipperiness","thunderstorms","drizzle","-","-","-"]; 
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+function getWeatherInfoDep(){/* departureZipCode = '' */}
+/* ]]> */
+</script>
+<div class="mod modLinkTeaser">
+<div class="borderRadiusSmall bg">
+<div class="inner" id="meteoHolderTitle"></div>
+<div id="meteoHolder"></div>
+</div>
+</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var url = "http://fahrplan.sbb.ch/sbb/meteoservice/prognosis?zip=6900";
+function getWeatherInfo(){
+new Ajax.Request(url, {
+method: 'get',
+requestHeaders: {Accept: 'application/json'},
+onSuccess: function(transport){
+var weather = eval('('+transport.responseText+')');
+setWeather(weather);
+}
+})
+function setWeather(weather)
+{
+var titleOut = '<h2 class="base">Your weather in Lugano</h2>';
+var out = '<div align="center"><table><tr>';
+function draw(weatherObj)
+{
+var wdIdx = parseInt(weatherObj.weekday);
+var tempMax = parseInt(weatherObj.tempMax);
+var tempMin = parseInt(weatherObj.tempMin);
+var tempIcon = (weatherObj.icon <10)? "0"+weatherObj.icon:weatherObj.icon;
+out += '<td style="padding:0px 5px;" align="center"><div class="col" >' +
+'  <div>' + tWeekdays[wdIdx] + '</div>' +
+'  <div><img src="/extern/meteo/' + tempIcon + '.png" title="' + iconTexts[weatherObj.icon] + '" alt="' + tWeekdays[wdIdx] + ' ' + tempMax + '&#176;/' + tempMin + '&#176; ' + iconTexts[weatherObj.icon] + '" /></div>' +
+'  <div class="temp">' + tempMax + '&#176;<br />' + tempMin + '&#176;</div>' +
+'</div></td>';
+}
+if(weather.prognosis)
+{
+for (var n=0;n<=2;n++)
+{
+var cwObj = {};
+cwObj.weekday = weather.prognosis[n].cal.weekDay;
+cwObj.tempMax = (weather.prognosis[n].tempMax).replace(/\./, ",");
+cwObj.tempMin = (weather.prognosis[n].tempMin).replace(/\./, ",");
+cwObj.icon = weather.prognosis[n].symbol;
+draw(cwObj);
+}
+}
+out += '</tr></table></div><div class="inner buttonHolder" style="text-align:right;"><a class="icon weather" target="_blank" href="http://www.meteocentrale.ch/en/weather.html"><img src="/extern/meteo/logo_meteo_145_e.png" alt="Meteomedia" style="vertical-align:middle;" /></a></div>';
+document.getElementById('meteoHolderTitle').innerHTML = titleOut;
+document.getElementById('meteoHolder').innerHTML = out;
+}
+}
+/* ]]> */
+</script>
+</div>
+<div class="line sbb-col-teaser">
+<div class="hd layoutHd">
+<div class="bg-corner-topleft"></div>
+<div class="bg-corner-topright"></div>
+</div>
+<div class="bd layoutBd">
+<div class="line">
+<!-- mod LinkTeaser START -->
+<div class="mod modLinkTeaser">
+<!-- tpl LinkTeaser-linkteaser START -->
+<div class="borderRadiusSmall bg">
+<!--[if IE]><div class="tl"></div><div class="tr"></div><![endif]-->
+<div class="inner">
+<div class="hd">
+<h2 class="base">Departure & arrival result</h2>
+</div>
+<div class="bd">
+<p class="base"></p>
+<ul class="linklist">
+<li><a href="http://www.sbb.ch/en/timetable/online-timetable/departure-arrival/resultat-anzeigen/tips-tricks.html" class="iconlink" id="linklistteaser-abfahrt-und-ankunft-resultat">Tips and Tricks</a></li>
+<li><a href="http://www.sbb.ch/en/timetable.html" class="iconlink" id="linklistteaser-abfahrt-und-ankunft-resultat">Timetable products</a></li>
+<li><a href="http://www.sbb.ch/en/timetable/rail-traffic-information.html" class="iconlink" id="linklistteaser-abfahrt-und-ankunft-resultat">Rail traffic information</a></li>
+</ul>
+</div>
+</div>
+<!--[if IE]><div class="bl"></div><div class="br"></div><![endif]-->
+</div>
+<!-- /tpl LinkTeaser-linkteaser END -->
+</div><!-- /mod LinkTeaser END -->
+</div>
+</div>
+<div class="ft layoutFt">
+<div class="bg-corner-bottomleft"></div>
+<div class="bg-corner-bottomright"></div>
+</div>
+</div>
+</div>
+<div class="main mainBd sbb-4col">
+<div class="line">
+<script type="text/javascript">(function(){try{var e=navigator.userAgent;if(e.indexOf(
+"like Gecko")===-1&&e.indexOf(
+"Gecko/")!==-1){if(!window.controllers){window.controllers={}}if(!navigator.product){navigator.product=
+"Gecko"}}}catch(t){}})()</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var gImagePath = "/img/";
+var fsugg_map  = "<img alt='Map' src='"+gImagePath + "suggest_icon_map.gif'/>";
+var connMapArray = new Array();
+var openedBaimConnections = new Array();
+// /* ]]> */
+</script>
+<script type="text/javascript" src="/js/livemap/matchingtable.js?guiV=4.11.43"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+gBaseUrl                = "http://fahrplan.sbb.ch";
+gUrlTravelPlanner       = "http://fahrplan.sbb.ch/bin/query.exe/en?";
+gUrlAjaxGetStop         = "http://fahrplan.sbb.ch/bin/ajax-getstop.exe/en?";
+gUrlTravelPlannerJSON   = gUrlTravelPlanner.substr(0,gUrlTravelPlanner.length-1);
+gUrlStationQuery        = "http://fahrplan.sbb.ch/bin/stboard.exe/en?";
+gUrlTimetableBooklet    = "http://timetable.sbb.ch/bin/query-p2w.exe/en?whichTask=pf&";
+gUrlTrainSearch         = "http://fahrplan.sbb.ch/bin/trainsearch.exe/en?";
+gUrlTrainInfo           = "http://fahrplan.sbb.ch/bin/traininfo.exe/en/";
+gUrlTrainInfoJSON       = "http://fahrplan.sbb.ch/bin/traininfo.exe/eny/";
+gUrlProfile             = "http://fahrplan.sbb.ch/bin/profile.exe/en?";
+gUrlHelp                = "http://fahrplan.sbb.ch/bin/help.exe/en?";
+gCatenateSeqnr          = "";
+gCatenateIdent          = "";
+gCatenateLayout         = "";
+gLanguage               = "e";
+gBrowser                = "n";
+gQuery_path             = "/bin/query.exe";
+gStboard_path           = "/bin/stboard.exe";
+gTrainsearch_path       = "/bin/trainsearch.exe";
+gProfile_path           = "/bin/profile.exe";
+gHelp_path              = "/bin/help.exe";
+gUrlPrefix              = "http://fahrplan.sbb.ch";
+var livemapZoomLevel = new Array();
+var livemapZoomLevelDelay = new Array();
+var ProductImages = new Array();
+var ProductImagesHTML = new Array();
+var ProductColors = new Array();
+var ProductImageMap = new Array();
+if(typeof Hafas == 'undefined') { Hafas = new Object;  }
+if(typeof Hafas.Texts == 'undefined') { Hafas.Texts = new Object; }
+Hafas.Texts.Livemap = new Object;
+Hafas.Texts.Livemap["nextstop"] = "Next stop";
+Hafas.Texts.Livemap["destination"] = "Direction";
+Hafas.Texts.Livemap["followjourney"] = "Fahrt verfolgen";
+Hafas.Texts.Livemap["ontime"] = "p&uuml;nktlich";
+Hafas.Texts.Livemap["showroute"] = "Show journey on map";
+Hafas.Texts.Livemap["noguarantee"] = "No liability is accepted for errors.";
+Hafas.Texts.Livemap["partCancellations"] = "partly cancelled";
+Hafas.Texts.Map = new Object;
+Hafas.Texts.Map["changeToStboard"] = "Departures table";
+Hafas.Texts.Map["chooseAsStart"] = "Choose&nbsp;as&nbsp;start";
+Hafas.Texts.Map["chooseAsDestination"] = "Choose&nbsp;as&nbsp;destination";
+Hafas.Texts.Map["goBack"] = "Back";
+var productBitsArray    = new Array();
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/prototype.js"></script>
+<script type="text/javascript">
+var productColors = new Hash();
+var productColorsFont = new Hash();
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+function selectMOT(stat,via,maxProduct)
+{
+var value = (stat=="none") ? false:true;
+var cSection = "";
+for(var p=0; p<maxProduct; p++)
+{
+eval("document.formular.REQ0JourneyProduct_prod_" + cSection + p +".checked = "+ value +";");
+}
+}
+// /* ]]> */
+</script>
+<script type="text/javascript" language="javascript">
+/* <![CDATA[ */
+// /* ]]> */
+</script>
+<script type="text/javascript" language="javascript">
+/* <![CDATA[ */
+var gSuggest_for_company = "sbb";
+function decodeName(at){
+var t = at.replace(/&ouml;/g, '&#246;');
+t = t.replace(/&auml;/g, '&#228;');
+t = t.replace(/&uuml;/g, '&#252;');
+t = t.replace(/&Auml;/g, '&#196;');
+t = t.replace(/&Uuml;/g, '&#220;');
+t = t.replace(/&Ouml;/g, '&#214;');
+t = t.replace(/&#252;/g, '&#252;');
+t = t.replace(/&#246;/g, '&#246;');
+t = t.replace(/&#228;/g, '&#228;');
+t = t.replace(/&#226;/g, '&#226;');
+t = t.replace(/&#223;/g, '&#223;');
+t = t.replace(/&#196;/g, '&#196;');
+t = t.replace(/&#214;/g, '&#214;');
+t = t.replace(/&#220;/g, '&#220;');
+t = t.replace(/&#248;/g, '&#248;');
+t = t.replace(/&#216;/g, '&#216;');
+t = t.replace(/&#229;/g, '&#229;');
+t = t.replace(/&#197;/g, '&#197;');
+t = t.replace(/&#230;/g, '&#230;');
+t = t.replace(/&#198;/g, '&#198;');
+t = t.replace(/&#233;/g, '&#233;');
+t = t.replace(/&#232;/g, '&#232;');
+t = t.replace(/&#156;/g, '&#156;');
+t = t.replace(/&#140;/g, '&#140;');
+//t = t.replace(/&#/g, '');
+return t;
+};
+// /* ]]> */
+</script>
+<script type="text/javascript" src="/js/FSuggest_v1.0.js?guiV=4.11.43"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+if(typeof Hafas == 'undefined'){
+var Hafas = new Object;
+}
+Hafas.Suggest = new Object;
+Hafas.Suggest.t_suggestionsoff = "Disable suggestions";
+Hafas.Suggest.t_suggestionson = "";
+Hafas.Suggest.t_minimapoff = "Disable mini-map";
+Hafas.Suggest.t_suggestions = "Suggestions";
+Hafas.Suggest.t_topMatches = "Top matches";
+Hafas.Suggest.t_furtherMatches = "Search for additional matches ...";
+Hafas.Suggest.t_meansOfTransport = "Means of transport at";
+Hafas.Suggest.t_connectionsPerYear = "Rides per year";
+Hafas.Suggest.t_location = "Stop";
+Hafas.Suggest.t_limitSearchMap = "";
+Hafas.Suggest.t_minimapon = "";
+Hafas.Suggest.t_suggestHint1 = "";
+Hafas.Suggest.t_suggestHint2 = "";
+Hafas.Suggest.t_filterStations = "";
+Hafas.Suggest.t_filterAddresses = "";
+Hafas.Suggest.t_filterPOI = "";
+Hafas.Suggest.t_suggestHint1 = "";
+Hafas.Suggest.t_suggestHint2 = "";
+function getElementsByClass( searchClass, domNode, tagName) {
+if (domNode == null) domNode = document.body;
+if (tagName == null) tagName = '*';
+var el = new Array();
+if (domNode == null) return el;
+var tags = domNode.getElementsByTagName(tagName);
+var tcl = ''+searchClass+'';
+for(i=0,j=0; i < tags.length; i++) {
+var test = " " + tags[i].className + " ";
+if (tags[i].className.indexOf(searchClass) != -1)
+el[j++] = tags[i];
+}
+return el;
+}
+function initHafasSuggest(){
+var elements = getElementsByClass("HafasSuggest",null,"input");
+for (var i=0;i < elements.length; i++) {
+if(elements[i].id != 'undefined') {
+var suggid = elements[i].id;
+}else{
+var suggid = 'hfs_suggest_input_' + i;
+}
+var classes = elements[i].className.split(" ");
+var suggestType = 0;
+var callbackArr = new Array();
+for(var j=0;j < classes.length; j++){
+if(classes[j] == "st"){
+suggestType += 1;
+}else if(classes[j] == "adr"){
+suggestType += 2;
+}else if(classes[j] == "poi"){
+suggestType += 4;
+}else if(classes[j].indexOf('sc_') >= 0){
+var selCallback = eval(classes[j].replace('sc_',''));
+callbackArr.push(selCallback);
+}
+}
+if(suggestType == 0){
+suggestType = 255;
+}
+var attr = (elements[i].getAttribute('name') != null)?elements[i].getAttribute('name'):'S';
+var currParam = {loc:suggid,
+type:attr,
+minChar:4,
+cookiename:'std30-history',
+requestURL:'http://fahrplan.sbb.ch/bin/ajax-getstop.exe/eny?start=1&REQ0JourneyStopsS0A='+suggestType+'&getstop=1&noSession=yes&REQ0JourneyStopsB=10&REQ0JourneyStopsS0G=',
+stopDelay:400,
+requestType:'js',
+useFurtherMatches:false ,
+useProducts:true,
+useWeight:true,
+useWrap:false,
+useHouseNumber:true,
+useHighlighting:true,
+useCategory:false,
+detachable:true,
+useTypeFilter:true,
+useMaps:false,
+useTopFavorites:false,
+useAutoFillIn:true
+};
+currParam.selectCallback = function(par){
+for(var i=0; i < callbackArr.length;i++){
+callbackArr[i](par);
+}
+};
+new FSuggest(currParam);
+}
+}
+Event.observe(window,"load", initHafasSuggest);
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+function openHIM(himLink){
+// Nx.$ ist jQuerry mit FancyBox PlugIn
+Nx.$.fancybox(
+{
+'href': himLink
+,'type':'iframe'
+,'scrolling':'auto'
+,'width':826
+,'height':500
+,'onComplete':function()
+{
+var $content = Nx.$('#fancybox-content');
+if(SBB.utils.is_ie6())
+{
+$content.css(
+{
+'width':function(){return $content.width() + 13}
+,'margin-right' : -13
+});
+}
+else
+{
+$content.css(
+{
+'width': function()
+{
+return $content.width() + 14
+}
+});
+}
+}
+});
+return false;
+}
+// /* ]]> */
+</script>
+<script type="text/javascript" src="/js/hafas_oneSBB.js" id="hafas_oneSBB"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+Event.observe(window,"load",getWeatherInfo);
+Event.observe(window,"load",getWeatherInfoDep);
+// /* ]]> */
+</script>
+<div class="hafas">
+<div class="hac_greybox">
+<div class="inputHolder">
+<div class="labelHolder">
+Station/stop:
+</div>
+<div>
+<a class="icon_only map" href="http://fahrplan.sbb.ch/bin/query.exe/en?view=map&MapScaling=2000&MapLocation.X=8946873&MapLocation.Y=46005506&MapLocation.type=1&MapLocation.ExtId=8505300&MapLocation.Name=Lugano&sturl=http%253A%252F%252Ffahrplan.sbb.ch%252Fbin%252Fstboard.exe%252Fen%253Finput%253D8505300%2526boardType%253Darr%2526time%253Dnow%2526maxJourneys%253D40%2526dateBegin%253D%2526dateEnd%253D%2526selectDate%253Dtoday%2526productsFilter%253D2%253A111101001%2526start%253Dyes" title="Local area map: Lugano">
+<span class="offScreen">
+Local area map: Lugano
+</span>
+</a>
+</div>
+<div>
+Lugano
+</div>
+</div>
+<div class="inputHolder">
+<div class="labelHolder">
+Timetable:
+</div>
+<div>
+Arrival
+</div>
+<div>
+14:45-19:32
+</div>
+<div>
+30.11.14
+</div>
+<div>
+<a class="icon std" href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&REQTrain_name=&boardType=arr&time=now&productsFilter=2:111101001&selectDate=today&maxJourneys=40&start=yes" title="refresh page">current time</a>
+</div>
+</div>
+</div>
+<div class="hac_greybox">
+<div class="buttonHolder">
+<a class="icon std" href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&REQTrain_name=&boardType=arr&time=14:45&maxJourneys=40&dateBegin=&dateEnd=&selectDate=today&productsFilter=2:111101001&editStation=yes&" title="Change query input data">
+Change query input data
+</a>
+<a class="icon std" href="http://fahrplan.sbb.ch/bin/stboard.exe/en?">
+New request
+</a>
+</div>
+<div style="margin-top: 5px;margin-bottom: 5px;height:1px;border-bottom:1px solid #cccccc;clear:both;"></div>
+<div class="buttonHolder">
+<a class="greyButton" href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&REQTrain_name=&boardType=dep&time=14:45&maxJourneys=40&dateBegin=&dateEnd=&selectDate=today&productsFilter=2:111101001&start=yes">
+Departure board
+</a>
+<a class="greyButton" href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=Lugano%238505300&REQTrain_name=&boardType=arr&time=14:45&maxJourneys=40&dateBegin=&dateEnd=&selectDate=today&productsFilter=2:111101001&start=yes&pageViewMode=PRINT&" target="Printview" onclick="popUp('about:blank','Printview','pri');" title="Print">
+Print
+</a>
+</div>
+</div>
+<div class="hac_greybox">
+<table cellspacing="0" class="hfs_stboard sq_arr_header">
+<tr>
+<th id="sq_journey" style="width:100px">Travel with</th>
+<th id="sq_time" style="width:50px">Arr.</th>
+<th id="sq_timetable" style="width:auto;">From</th>
+<th id="sq_platform" style="width:110px">Platf./Edge/Station</th>
+</tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/981945/372807/610686/21972/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">ICN 671</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">14:47</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8500010&boardType=arr&time=11:04&productsFilter=2:111101001&">Basel SBB</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8500010&boardType=arr&time=11:04&productsFilter=2:111101001&">Basel SBB</a>&nbsp;11:04
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8500218&boardType=arr&time=11:30&productsFilter=2:111101001&">Olten</a>&nbsp;11:30
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505000&boardType=arr&time=12:18&productsFilter=2:111101001&">Luzern</a>&nbsp;12:18
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505004&boardType=arr&time=12:50&productsFilter=2:111101001&">Arth-Goldau</a>&nbsp;12:50
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505213&boardType=arr&time=14:25&productsFilter=2:111101001&">Bellinzona</a>&nbsp;14:25
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=14:47&productsFilter=2:111101001&">Lugano</a>&nbsp;14:47
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+3<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/2157/92711/336156/167376/95?date=30.11.14&station_evaId=8505391&station_type=arr">
+<span class="bold">S 60 87</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">14:50</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=14:25&productsFilter=2:111101001&">Ponte Tresa</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=14:25&productsFilter=2:111101001&">Ponte Tresa</a>&nbsp;14:25
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505397&boardType=arr&time=14:27&productsFilter=2:111101001&">Caslano</a>&nbsp;14:27
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505396&boardType=arr&time=14:30&productsFilter=2:111101001&">Magliaso</a>&nbsp;14:30
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505392&boardType=arr&time=14:31&productsFilter=2:111101001&">Magliaso Paese</a>&nbsp;14:31
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505395&boardType=arr&time=14:34&productsFilter=2:111101001&">Agno</a>&nbsp;14:34
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505390&boardType=arr&time=14:37&productsFilter=2:111101001&">Serocca</a>&nbsp;14:37
+&#149;
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505393&boardType=arr&time=14:45&productsFilter=2:111101001&">Cappella-Agnuzzo</a>&nbsp;14:45
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8530790&boardType=arr&time=14:46&productsFilter=2:111101001&">Sorengo Laghetto</a>&nbsp;14:46
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505399&boardType=arr&time=14:47&productsFilter=2:111101001&">Sorengo</a>&nbsp;14:47
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505391&boardType=arr&time=14:50&productsFilter=2:111101001&">Lugano FLP</a>&nbsp;14:50
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+Lugano FLP
+</td>
+</tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/651306/268262/115534/159335/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">S 10 25124</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">14:56</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=14:28&productsFilter=2:111101001&">Chiasso</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=14:28&productsFilter=2:111101001&">Chiasso</a>&nbsp;14:28
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505306&boardType=arr&time=14:31&productsFilter=2:111101001&">Balerna</a>&nbsp;14:31
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505305&boardType=arr&time=14:36&productsFilter=2:111101001&">Mendrisio</a>&nbsp;14:36
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8518475&boardType=arr&time=14:37&productsFilter=2:111101001&">Mendrisio S. Martino</a>&nbsp;14:37
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505304&boardType=arr&time=14:40&productsFilter=2:111101001&">Capolago-Riva S. Vitale</a>&nbsp;14:40
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505303&boardType=arr&time=14:45&productsFilter=2:111101001&">Maroggia-Melano</a>&nbsp;14:45
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505302&boardType=arr&time=14:48&productsFilter=2:111101001&">Melide</a>&nbsp;14:48
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505301&boardType=arr&time=14:52&productsFilter=2:111101001&">Lugano-Paradiso</a>&nbsp;14:52
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=14:56&productsFilter=2:111101001&">Lugano</a>&nbsp;14:56
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+4<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/141216/98233/451194/178525/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">S 10 25125</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">15:03</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505209&boardType=arr&time=14:05&productsFilter=2:111101001&">Biasca</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505209&boardType=arr&time=14:05&productsFilter=2:111101001&">Biasca</a>&nbsp;14:05
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505212&boardType=arr&time=14:14&productsFilter=2:111101001&">Castione-Arbedo</a>&nbsp;14:14
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505213&boardType=arr&time=14:33&productsFilter=2:111101001&">Bellinzona</a>&nbsp;14:33
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505214&boardType=arr&time=14:36&productsFilter=2:111101001&">Giubiasco</a>&nbsp;14:36
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505216&boardType=arr&time=14:45&productsFilter=2:111101001&">Rivera-Bironico</a>&nbsp;14:45
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505217&boardType=arr&time=14:49&productsFilter=2:111101001&">Mezzovico</a>&nbsp;14:49
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505218&boardType=arr&time=14:55&productsFilter=2:111101001&">Taverne-Torricella</a>&nbsp;14:55
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505219&boardType=arr&time=14:57&productsFilter=2:111101001&">Lamone-Cadempino</a>&nbsp;14:57
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=15:03&productsFilter=2:111101001&">Lugano</a>&nbsp;15:03
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+2<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/462132/246036/156702/75711/95?date=30.11.14&station_evaId=8505391&station_type=arr">
+<span class="bold">S 60 88</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">15:20</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=14:55&productsFilter=2:111101001&">Ponte Tresa</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=14:55&productsFilter=2:111101001&">Ponte Tresa</a>&nbsp;14:55
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505397&boardType=arr&time=14:57&productsFilter=2:111101001&">Caslano</a>&nbsp;14:57
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505396&boardType=arr&time=15:00&productsFilter=2:111101001&">Magliaso</a>&nbsp;15:00
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505392&boardType=arr&time=15:01&productsFilter=2:111101001&">Magliaso Paese</a>&nbsp;15:01
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505395&boardType=arr&time=15:04&productsFilter=2:111101001&">Agno</a>&nbsp;15:04
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505390&boardType=arr&time=15:07&productsFilter=2:111101001&">Serocca</a>&nbsp;15:07
+&#149;
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505393&boardType=arr&time=15:15&productsFilter=2:111101001&">Cappella-Agnuzzo</a>&nbsp;15:15
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8530790&boardType=arr&time=15:16&productsFilter=2:111101001&">Sorengo Laghetto</a>&nbsp;15:16
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505399&boardType=arr&time=15:17&productsFilter=2:111101001&">Sorengo</a>&nbsp;15:17
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505391&boardType=arr&time=15:20&productsFilter=2:111101001&">Lugano FLP</a>&nbsp;15:20
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+Lugano FLP
+</td>
+</tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/899034/724663/663110/31877/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">S 10 25172</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">15:26</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301700&boardType=arr&time=14:10&productsFilter=2:111101001&">Milano Centrale</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301700&boardType=arr&time=14:10&productsFilter=2:111101001&">Milano Centrale</a>&nbsp;14:10
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301322&boardType=arr&time=14:22&productsFilter=2:111101001&">Monza</a>&nbsp;14:22
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=14:58&productsFilter=2:111101001&">Chiasso</a>&nbsp;14:58
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505305&boardType=arr&time=15:06&productsFilter=2:111101001&">Mendrisio</a>&nbsp;15:06
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8518475&boardType=arr&time=15:07&productsFilter=2:111101001&">Mendrisio S. Martino</a>&nbsp;15:07
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505304&boardType=arr&time=15:10&productsFilter=2:111101001&">Capolago-Riva S. Vitale</a>&nbsp;15:10
+&#149;
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505303&boardType=arr&time=15:15&productsFilter=2:111101001&">Maroggia-Melano</a>&nbsp;15:15
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505302&boardType=arr&time=15:18&productsFilter=2:111101001&">Melide</a>&nbsp;15:18
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505301&boardType=arr&time=15:22&productsFilter=2:111101001&">Lugano-Paradiso</a>&nbsp;15:22
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=15:26&productsFilter=2:111101001&">Lugano</a>&nbsp;15:26
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+4<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/725673/659681/624696/70457/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">EC 318</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">15:32</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301700&boardType=arr&time=14:25&productsFilter=2:111101001&">Milano Centrale</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301700&boardType=arr&time=14:25&productsFilter=2:111101001&">Milano Centrale</a>&nbsp;14:25
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301322&boardType=arr&time=14:37&productsFilter=2:111101001&">Monza</a>&nbsp;14:37
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=15:12&productsFilter=2:111101001&">Chiasso</a>&nbsp;15:12
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=15:32&productsFilter=2:111101001&">Lugano</a>&nbsp;15:32
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+3<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-0"><td colspan="4" class="result">
+<div class="messageHolder">
+<div class="icon">
+<a name="HIM__messages"></a>
+<img class="himIcon" src="/img/one/him/icon_fahrplan_information.png" alt="Information" title="Information" />
+</div>
+<div class="text">
+<a class="himdetails" onclick="openHIM('http://fahrplan.sbb.ch/bin/help.exe/en?tpl=showmap_external&messageID=758319&view=fancybox&OK#hfsShm'); return false;">
+<span class="bold">
+&nbsp;
+(Milano Centrale - Z&#252;rich HB)
+&nbsp;Travel advice: EC 318 Milano Centrale - Z&#252;rich HB (SBB CFF FFS)
+</span>
+<span class="him">
+Travel advice: This train is particularly crowded.
+</span>
+<span class="icon himdetails">More</span>
+</a>
+</div>
+</div>
+</td></tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/69678/74424/891532/422540/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">S 10 25175</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">15:33</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505212&boardType=arr&time=14:58&productsFilter=2:111101001&">Castione-Arbedo</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505212&boardType=arr&time=14:58&productsFilter=2:111101001&">Castione-Arbedo</a>&nbsp;14:58
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505213&boardType=arr&time=15:03&productsFilter=2:111101001&">Bellinzona</a>&nbsp;15:03
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505214&boardType=arr&time=15:06&productsFilter=2:111101001&">Giubiasco</a>&nbsp;15:06
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505216&boardType=arr&time=15:15&productsFilter=2:111101001&">Rivera-Bironico</a>&nbsp;15:15
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505217&boardType=arr&time=15:19&productsFilter=2:111101001&">Mezzovico</a>&nbsp;15:19
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505218&boardType=arr&time=15:25&productsFilter=2:111101001&">Taverne-Torricella</a>&nbsp;15:25
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505219&boardType=arr&time=15:27&productsFilter=2:111101001&">Lamone-Cadempino</a>&nbsp;15:27
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=15:33&productsFilter=2:111101001&">Lugano</a>&nbsp;15:33
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+2<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/506790/214677/416802/39471/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">ICN 873</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">15:47</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8503000&boardType=arr&time=13:09&productsFilter=2:111101001&">Z&#252;rich HB</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8503000&boardType=arr&time=13:09&productsFilter=2:111101001&">Z&#252;rich HB</a>&nbsp;13:09
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8502204&boardType=arr&time=13:31&productsFilter=2:111101001&">Zug</a>&nbsp;13:31
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505004&boardType=arr&time=13:50&productsFilter=2:111101001&">Arth-Goldau</a>&nbsp;13:50
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505213&boardType=arr&time=15:25&productsFilter=2:111101001&">Bellinzona</a>&nbsp;15:25
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=15:47&productsFilter=2:111101001&">Lugano</a>&nbsp;15:47
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+3<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/945276/407084/638830/4342/95?date=30.11.14&station_evaId=8505391&station_type=arr">
+<span class="bold">S 60 89</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">15:50</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=15:25&productsFilter=2:111101001&">Ponte Tresa</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=15:25&productsFilter=2:111101001&">Ponte Tresa</a>&nbsp;15:25
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505397&boardType=arr&time=15:27&productsFilter=2:111101001&">Caslano</a>&nbsp;15:27
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505396&boardType=arr&time=15:30&productsFilter=2:111101001&">Magliaso</a>&nbsp;15:30
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505392&boardType=arr&time=15:31&productsFilter=2:111101001&">Magliaso Paese</a>&nbsp;15:31
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505395&boardType=arr&time=15:34&productsFilter=2:111101001&">Agno</a>&nbsp;15:34
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505390&boardType=arr&time=15:37&productsFilter=2:111101001&">Serocca</a>&nbsp;15:37
+&#149;
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505393&boardType=arr&time=15:45&productsFilter=2:111101001&">Cappella-Agnuzzo</a>&nbsp;15:45
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8530790&boardType=arr&time=15:46&productsFilter=2:111101001&">Sorengo Laghetto</a>&nbsp;15:46
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505399&boardType=arr&time=15:47&productsFilter=2:111101001&">Sorengo</a>&nbsp;15:47
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505391&boardType=arr&time=15:50&productsFilter=2:111101001&">Lugano FLP</a>&nbsp;15:50
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+Lugano FLP
+</td>
+</tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/691704/281730/555790/47327/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">S 10 25126</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">15:56</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=15:28&productsFilter=2:111101001&">Chiasso</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=15:28&productsFilter=2:111101001&">Chiasso</a>&nbsp;15:28
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505306&boardType=arr&time=15:31&productsFilter=2:111101001&">Balerna</a>&nbsp;15:31
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505305&boardType=arr&time=15:36&productsFilter=2:111101001&">Mendrisio</a>&nbsp;15:36
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8518475&boardType=arr&time=15:37&productsFilter=2:111101001&">Mendrisio S. Martino</a>&nbsp;15:37
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505304&boardType=arr&time=15:40&productsFilter=2:111101001&">Capolago-Riva S. Vitale</a>&nbsp;15:40
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505303&boardType=arr&time=15:45&productsFilter=2:111101001&">Maroggia-Melano</a>&nbsp;15:45
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505302&boardType=arr&time=15:48&productsFilter=2:111101001&">Melide</a>&nbsp;15:48
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505301&boardType=arr&time=15:52&productsFilter=2:111101001&">Lugano-Paradiso</a>&nbsp;15:52
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=15:56&productsFilter=2:111101001&">Lugano</a>&nbsp;15:56
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+4<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/571152/241547/361066/9851/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">S 10 25127</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">16:03</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505209&boardType=arr&time=15:05&productsFilter=2:111101001&">Biasca</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505209&boardType=arr&time=15:05&productsFilter=2:111101001&">Biasca</a>&nbsp;15:05
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505212&boardType=arr&time=15:14&productsFilter=2:111101001&">Castione-Arbedo</a>&nbsp;15:14
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505213&boardType=arr&time=15:33&productsFilter=2:111101001&">Bellinzona</a>&nbsp;15:33
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505214&boardType=arr&time=15:36&productsFilter=2:111101001&">Giubiasco</a>&nbsp;15:36
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505216&boardType=arr&time=15:45&productsFilter=2:111101001&">Rivera-Bironico</a>&nbsp;15:45
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505217&boardType=arr&time=15:49&productsFilter=2:111101001&">Mezzovico</a>&nbsp;15:49
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505218&boardType=arr&time=15:55&productsFilter=2:111101001&">Taverne-Torricella</a>&nbsp;15:55
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505219&boardType=arr&time=15:57&productsFilter=2:111101001&">Lamone-Cadempino</a>&nbsp;15:57
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=16:03&productsFilter=2:111101001&">Lugano</a>&nbsp;16:03
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+2<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/349260/208412/457360/112280/95?date=30.11.14&station_evaId=8505391&station_type=arr">
+<span class="bold">S 60 90</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">16:20</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=15:55&productsFilter=2:111101001&">Ponte Tresa</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=15:55&productsFilter=2:111101001&">Ponte Tresa</a>&nbsp;15:55
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505397&boardType=arr&time=15:57&productsFilter=2:111101001&">Caslano</a>&nbsp;15:57
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505396&boardType=arr&time=16:00&productsFilter=2:111101001&">Magliaso</a>&nbsp;16:00
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505392&boardType=arr&time=16:01&productsFilter=2:111101001&">Magliaso Paese</a>&nbsp;16:01
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505395&boardType=arr&time=16:04&productsFilter=2:111101001&">Agno</a>&nbsp;16:04
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505390&boardType=arr&time=16:07&productsFilter=2:111101001&">Serocca</a>&nbsp;16:07
+&#149;
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505393&boardType=arr&time=16:15&productsFilter=2:111101001&">Cappella-Agnuzzo</a>&nbsp;16:15
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8530790&boardType=arr&time=16:16&productsFilter=2:111101001&">Sorengo Laghetto</a>&nbsp;16:16
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505399&boardType=arr&time=16:17&productsFilter=2:111101001&">Sorengo</a>&nbsp;16:17
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505391&boardType=arr&time=16:20&productsFilter=2:111101001&">Lugano FLP</a>&nbsp;16:20
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+Lugano FLP
+</td>
+</tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/940635/358852/774758/73834/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">EC 319</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">16:24</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8503000&boardType=arr&time=13:32&productsFilter=2:111101001&">Z&#252;rich HB</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8503000&boardType=arr&time=13:32&productsFilter=2:111101001&">Z&#252;rich HB</a>&nbsp;13:32
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8502204&boardType=arr&time=14:00&productsFilter=2:111101001&">Zug</a>&nbsp;14:00
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505004&boardType=arr&time=14:17&productsFilter=2:111101001&">Arth-Goldau</a>&nbsp;14:17
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505213&boardType=arr&time=15:59&productsFilter=2:111101001&">Bellinzona</a>&nbsp;15:59
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=16:24&productsFilter=2:111101001&">Lugano</a>&nbsp;16:24
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+2<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/12963/55518/428204/209781/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">S 10 25174</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">16:26</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=15:58&productsFilter=2:111101001&">Chiasso</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=15:58&productsFilter=2:111101001&">Chiasso</a>&nbsp;15:58
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505306&boardType=arr&time=16:01&productsFilter=2:111101001&">Balerna</a>&nbsp;16:01
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505305&boardType=arr&time=16:06&productsFilter=2:111101001&">Mendrisio</a>&nbsp;16:06
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8518475&boardType=arr&time=16:07&productsFilter=2:111101001&">Mendrisio S. Martino</a>&nbsp;16:07
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505304&boardType=arr&time=16:10&productsFilter=2:111101001&">Capolago-Riva S. Vitale</a>&nbsp;16:10
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505303&boardType=arr&time=16:15&productsFilter=2:111101001&">Maroggia-Melano</a>&nbsp;16:15
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505302&boardType=arr&time=16:18&productsFilter=2:111101001&">Melide</a>&nbsp;16:18
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505301&boardType=arr&time=16:22&productsFilter=2:111101001&">Lugano-Paradiso</a>&nbsp;16:22
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=16:26&productsFilter=2:111101001&">Lugano</a>&nbsp;16:26
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+4<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/850935/701300/333324/116983/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">EC 258</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">16:32</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301700&boardType=arr&time=15:10&productsFilter=2:111101001&">Milano Centrale</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301700&boardType=arr&time=15:10&productsFilter=2:111101001&">Milano Centrale</a>&nbsp;15:10
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301307&boardType=arr&time=15:45&productsFilter=2:111101001&">Como S. Giovanni</a>&nbsp;15:45
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=16:12&productsFilter=2:111101001&">Chiasso</a>&nbsp;16:12
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=16:32&productsFilter=2:111101001&">Lugano</a>&nbsp;16:32
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+3<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/92616/455849/930598/434427/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">S 10 25177</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">16:33</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505212&boardType=arr&time=15:58&productsFilter=2:111101001&">Castione-Arbedo</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505212&boardType=arr&time=15:58&productsFilter=2:111101001&">Castione-Arbedo</a>&nbsp;15:58
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505213&boardType=arr&time=16:03&productsFilter=2:111101001&">Bellinzona</a>&nbsp;16:03
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505214&boardType=arr&time=16:06&productsFilter=2:111101001&">Giubiasco</a>&nbsp;16:06
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505216&boardType=arr&time=16:15&productsFilter=2:111101001&">Rivera-Bironico</a>&nbsp;16:15
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505217&boardType=arr&time=16:19&productsFilter=2:111101001&">Mezzovico</a>&nbsp;16:19
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505218&boardType=arr&time=16:25&productsFilter=2:111101001&">Taverne-Torricella</a>&nbsp;16:25
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505219&boardType=arr&time=16:27&productsFilter=2:111101001&">Lamone-Cadempino</a>&nbsp;16:27
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=16:33&productsFilter=2:111101001&">Lugano</a>&nbsp;16:33
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+2<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/38727/58406/832366/403274/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">ICN 675</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">16:47</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8500010&boardType=arr&time=13:04&productsFilter=2:111101001&">Basel SBB</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8500010&boardType=arr&time=13:04&productsFilter=2:111101001&">Basel SBB</a>&nbsp;13:04
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8500218&boardType=arr&time=13:30&productsFilter=2:111101001&">Olten</a>&nbsp;13:30
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505000&boardType=arr&time=14:18&productsFilter=2:111101001&">Luzern</a>&nbsp;14:18
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505004&boardType=arr&time=14:50&productsFilter=2:111101001&">Arth-Goldau</a>&nbsp;14:50
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505213&boardType=arr&time=16:25&productsFilter=2:111101001&">Bellinzona</a>&nbsp;16:25
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=16:47&productsFilter=2:111101001&">Lugano</a>&nbsp;16:47
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+3<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/565182/280386/123498/126666/95?date=30.11.14&station_evaId=8505391&station_type=arr">
+<span class="bold">S 60 91</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">16:50</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=16:25&productsFilter=2:111101001&">Ponte Tresa</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=16:25&productsFilter=2:111101001&">Ponte Tresa</a>&nbsp;16:25
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505397&boardType=arr&time=16:27&productsFilter=2:111101001&">Caslano</a>&nbsp;16:27
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505396&boardType=arr&time=16:30&productsFilter=2:111101001&">Magliaso</a>&nbsp;16:30
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505392&boardType=arr&time=16:31&productsFilter=2:111101001&">Magliaso Paese</a>&nbsp;16:31
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505395&boardType=arr&time=16:34&productsFilter=2:111101001&">Agno</a>&nbsp;16:34
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505390&boardType=arr&time=16:37&productsFilter=2:111101001&">Serocca</a>&nbsp;16:37
+&#149;
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505393&boardType=arr&time=16:45&productsFilter=2:111101001&">Cappella-Agnuzzo</a>&nbsp;16:45
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8530790&boardType=arr&time=16:46&productsFilter=2:111101001&">Sorengo Laghetto</a>&nbsp;16:46
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505399&boardType=arr&time=16:47&productsFilter=2:111101001&">Sorengo</a>&nbsp;16:47
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505391&boardType=arr&time=16:50&productsFilter=2:111101001&">Lugano FLP</a>&nbsp;16:50
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+Lugano FLP
+</td>
+</tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/918996/357496/715284/51310/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">S 10 25128</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">16:56</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=16:28&productsFilter=2:111101001&">Chiasso</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=16:28&productsFilter=2:111101001&">Chiasso</a>&nbsp;16:28
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505306&boardType=arr&time=16:31&productsFilter=2:111101001&">Balerna</a>&nbsp;16:31
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505305&boardType=arr&time=16:36&productsFilter=2:111101001&">Mendrisio</a>&nbsp;16:36
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8518475&boardType=arr&time=16:37&productsFilter=2:111101001&">Mendrisio S. Martino</a>&nbsp;16:37
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505304&boardType=arr&time=16:40&productsFilter=2:111101001&">Capolago-Riva S. Vitale</a>&nbsp;16:40
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505303&boardType=arr&time=16:45&productsFilter=2:111101001&">Maroggia-Melano</a>&nbsp;16:45
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505302&boardType=arr&time=16:48&productsFilter=2:111101001&">Melide</a>&nbsp;16:48
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505301&boardType=arr&time=16:52&productsFilter=2:111101001&">Lugano-Paradiso</a>&nbsp;16:52
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=16:56&productsFilter=2:111101001&">Lugano</a>&nbsp;16:56
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+4<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/913953/355816/909188/149943/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">S 10 25129</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">17:03</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505209&boardType=arr&time=16:05&productsFilter=2:111101001&">Biasca</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505209&boardType=arr&time=16:05&productsFilter=2:111101001&">Biasca</a>&nbsp;16:05
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505212&boardType=arr&time=16:14&productsFilter=2:111101001&">Castione-Arbedo</a>&nbsp;16:14
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505213&boardType=arr&time=16:33&productsFilter=2:111101001&">Bellinzona</a>&nbsp;16:33
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505214&boardType=arr&time=16:36&productsFilter=2:111101001&">Giubiasco</a>&nbsp;16:36
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505216&boardType=arr&time=16:45&productsFilter=2:111101001&">Rivera-Bironico</a>&nbsp;16:45
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505217&boardType=arr&time=16:49&productsFilter=2:111101001&">Mezzovico</a>&nbsp;16:49
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505218&boardType=arr&time=16:55&productsFilter=2:111101001&">Taverne-Torricella</a>&nbsp;16:55
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505219&boardType=arr&time=16:57&productsFilter=2:111101001&">Lamone-Cadempino</a>&nbsp;16:57
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=17:03&productsFilter=2:111101001&">Lugano</a>&nbsp;17:03
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+2<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/563457/279811/791024/207715/95?date=30.11.14&station_evaId=8505391&station_type=arr">
+<span class="bold">S 60 92</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">17:20</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=16:55&productsFilter=2:111101001&">Ponte Tresa</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=16:55&productsFilter=2:111101001&">Ponte Tresa</a>&nbsp;16:55
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505397&boardType=arr&time=16:57&productsFilter=2:111101001&">Caslano</a>&nbsp;16:57
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505396&boardType=arr&time=17:00&productsFilter=2:111101001&">Magliaso</a>&nbsp;17:00
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505392&boardType=arr&time=17:01&productsFilter=2:111101001&">Magliaso Paese</a>&nbsp;17:01
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505395&boardType=arr&time=17:04&productsFilter=2:111101001&">Agno</a>&nbsp;17:04
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505390&boardType=arr&time=17:07&productsFilter=2:111101001&">Serocca</a>&nbsp;17:07
+&#149;
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505393&boardType=arr&time=17:15&productsFilter=2:111101001&">Cappella-Agnuzzo</a>&nbsp;17:15
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8530790&boardType=arr&time=17:16&productsFilter=2:111101001&">Sorengo Laghetto</a>&nbsp;17:16
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505399&boardType=arr&time=17:17&productsFilter=2:111101001&">Sorengo</a>&nbsp;17:17
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505391&boardType=arr&time=17:20&productsFilter=2:111101001&">Lugano FLP</a>&nbsp;17:20
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+Lugano FLP
+</td>
+</tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/335331/536763/785162/280804/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">S 10 25176</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">17:26</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301700&boardType=arr&time=16:10&productsFilter=2:111101001&">Milano Centrale</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301700&boardType=arr&time=16:10&productsFilter=2:111101001&">Milano Centrale</a>&nbsp;16:10
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301322&boardType=arr&time=16:22&productsFilter=2:111101001&">Monza</a>&nbsp;16:22
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=16:58&productsFilter=2:111101001&">Chiasso</a>&nbsp;16:58
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505305&boardType=arr&time=17:06&productsFilter=2:111101001&">Mendrisio</a>&nbsp;17:06
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8518475&boardType=arr&time=17:07&productsFilter=2:111101001&">Mendrisio S. Martino</a>&nbsp;17:07
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505304&boardType=arr&time=17:10&productsFilter=2:111101001&">Capolago-Riva S. Vitale</a>&nbsp;17:10
+&#149;
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505303&boardType=arr&time=17:15&productsFilter=2:111101001&">Maroggia-Melano</a>&nbsp;17:15
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505302&boardType=arr&time=17:18&productsFilter=2:111101001&">Melide</a>&nbsp;17:18
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505301&boardType=arr&time=17:22&productsFilter=2:111101001&">Lugano-Paradiso</a>&nbsp;17:22
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=17:26&productsFilter=2:111101001&">Lugano</a>&nbsp;17:26
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+4<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/555912/603098/899006/264199/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">EC 320</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">17:32</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301700&boardType=arr&time=16:25&productsFilter=2:111101001&">Milano Centrale</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301700&boardType=arr&time=16:25&productsFilter=2:111101001&">Milano Centrale</a>&nbsp;16:25
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301322&boardType=arr&time=16:37&productsFilter=2:111101001&">Monza</a>&nbsp;16:37
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=17:12&productsFilter=2:111101001&">Chiasso</a>&nbsp;17:12
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=17:32&productsFilter=2:111101001&">Lugano</a>&nbsp;17:32
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+3<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-1"><td colspan="4" class="result">
+<div class="messageHolder">
+<div class="icon">
+<a name="HIM__messages"></a>
+<img class="himIcon" src="/img/one/him/icon_fahrplan_information.png" alt="Information" title="Information" />
+</div>
+<div class="text">
+<a class="himdetails" onclick="openHIM('http://fahrplan.sbb.ch/bin/help.exe/en?tpl=showmap_external&messageID=769737&view=fancybox&OK#hfsShm'); return false;">
+<span class="bold">
+&nbsp;
+(Chiasso - Z&#252;rich HB)
+&nbsp;partly cancelled: EC 320 Milano Centrale - Z&#252;rich HB
+</span>
+<span class="him">
+EC 320 from Milano Centrale departure 16:25 to Z&#252;rich HB arrival 20:28 is cancelled between Chiasso and Z&#252;rich HB.
+</span>
+<span class="icon himdetails">More</span>
+</a>
+</div>
+</div>
+</td></tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/798792/317465/364302/84113/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">S 10 25179</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">17:33</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505212&boardType=arr&time=16:58&productsFilter=2:111101001&">Castione-Arbedo</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505212&boardType=arr&time=16:58&productsFilter=2:111101001&">Castione-Arbedo</a>&nbsp;16:58
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505213&boardType=arr&time=17:03&productsFilter=2:111101001&">Bellinzona</a>&nbsp;17:03
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505214&boardType=arr&time=17:06&productsFilter=2:111101001&">Giubiasco</a>&nbsp;17:06
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505216&boardType=arr&time=17:15&productsFilter=2:111101001&">Rivera-Bironico</a>&nbsp;17:15
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505217&boardType=arr&time=17:19&productsFilter=2:111101001&">Mezzovico</a>&nbsp;17:19
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505218&boardType=arr&time=17:25&productsFilter=2:111101001&">Taverne-Torricella</a>&nbsp;17:25
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505219&boardType=arr&time=17:27&productsFilter=2:111101001&">Lamone-Cadempino</a>&nbsp;17:27
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=17:33&productsFilter=2:111101001&">Lugano</a>&nbsp;17:33
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+2<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/341724/159661/663646/217915/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">ICN 877</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">17:47</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8503000&boardType=arr&time=15:09&productsFilter=2:111101001&">Z&#252;rich HB</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8503000&boardType=arr&time=15:09&productsFilter=2:111101001&">Z&#252;rich HB</a>&nbsp;15:09
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8502204&boardType=arr&time=15:31&productsFilter=2:111101001&">Zug</a>&nbsp;15:31
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505004&boardType=arr&time=15:50&productsFilter=2:111101001&">Arth-Goldau</a>&nbsp;15:50
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505213&boardType=arr&time=17:25&productsFilter=2:111101001&">Bellinzona</a>&nbsp;17:25
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=17:47&productsFilter=2:111101001&">Lugano</a>&nbsp;17:47
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+3<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/374937/216971/612788/181438/95?date=30.11.14&station_evaId=8505391&station_type=arr">
+<span class="bold">S 60 93</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">17:50</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=17:25&productsFilter=2:111101001&">Ponte Tresa</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=17:25&productsFilter=2:111101001&">Ponte Tresa</a>&nbsp;17:25
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505397&boardType=arr&time=17:27&productsFilter=2:111101001&">Caslano</a>&nbsp;17:27
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505396&boardType=arr&time=17:30&productsFilter=2:111101001&">Magliaso</a>&nbsp;17:30
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505392&boardType=arr&time=17:31&productsFilter=2:111101001&">Magliaso Paese</a>&nbsp;17:31
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505395&boardType=arr&time=17:34&productsFilter=2:111101001&">Agno</a>&nbsp;17:34
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505390&boardType=arr&time=17:37&productsFilter=2:111101001&">Serocca</a>&nbsp;17:37
+&#149;
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505393&boardType=arr&time=17:45&productsFilter=2:111101001&">Cappella-Agnuzzo</a>&nbsp;17:45
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8530790&boardType=arr&time=17:46&productsFilter=2:111101001&">Sorengo Laghetto</a>&nbsp;17:46
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505399&boardType=arr&time=17:47&productsFilter=2:111101001&">Sorengo</a>&nbsp;17:47
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505391&boardType=arr&time=17:50&productsFilter=2:111101001&">Lugano FLP</a>&nbsp;17:50
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+Lugano FLP
+</td>
+</tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/72840/75446/846972/399206/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">S 10 25130</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">17:56</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=17:28&productsFilter=2:111101001&">Chiasso</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=17:28&productsFilter=2:111101001&">Chiasso</a>&nbsp;17:28
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505306&boardType=arr&time=17:31&productsFilter=2:111101001&">Balerna</a>&nbsp;17:31
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505305&boardType=arr&time=17:36&productsFilter=2:111101001&">Mendrisio</a>&nbsp;17:36
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8518475&boardType=arr&time=17:37&productsFilter=2:111101001&">Mendrisio S. Martino</a>&nbsp;17:37
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505304&boardType=arr&time=17:40&productsFilter=2:111101001&">Capolago-Riva S. Vitale</a>&nbsp;17:40
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505303&boardType=arr&time=17:45&productsFilter=2:111101001&">Maroggia-Melano</a>&nbsp;17:45
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505302&boardType=arr&time=17:48&productsFilter=2:111101001&">Melide</a>&nbsp;17:48
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505301&boardType=arr&time=17:52&productsFilter=2:111101001&">Lugano-Paradiso</a>&nbsp;17:52
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=17:56&productsFilter=2:111101001&">Lugano</a>&nbsp;17:56
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+4<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/639408/264303/12590/206841/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">S 10 25131</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">18:03</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505209&boardType=arr&time=17:05&productsFilter=2:111101001&">Biasca</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505209&boardType=arr&time=17:05&productsFilter=2:111101001&">Biasca</a>&nbsp;17:05
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505212&boardType=arr&time=17:14&productsFilter=2:111101001&">Castione-Arbedo</a>&nbsp;17:14
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505213&boardType=arr&time=17:33&productsFilter=2:111101001&">Bellinzona</a>&nbsp;17:33
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505214&boardType=arr&time=17:36&productsFilter=2:111101001&">Giubiasco</a>&nbsp;17:36
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505216&boardType=arr&time=17:45&productsFilter=2:111101001&">Rivera-Bironico</a>&nbsp;17:45
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505217&boardType=arr&time=17:49&productsFilter=2:111101001&">Mezzovico</a>&nbsp;17:49
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505218&boardType=arr&time=17:55&productsFilter=2:111101001&">Taverne-Torricella</a>&nbsp;17:55
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505219&boardType=arr&time=17:57&productsFilter=2:111101001&">Lamone-Cadempino</a>&nbsp;17:57
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=18:03&productsFilter=2:111101001&">Lugano</a>&nbsp;18:03
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+2<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/428268/234748/771874/243205/95?date=30.11.14&station_evaId=8505391&station_type=arr">
+<span class="bold">S 60 94</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">18:20</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=17:55&productsFilter=2:111101001&">Ponte Tresa</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=17:55&productsFilter=2:111101001&">Ponte Tresa</a>&nbsp;17:55
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505397&boardType=arr&time=17:57&productsFilter=2:111101001&">Caslano</a>&nbsp;17:57
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505396&boardType=arr&time=18:00&productsFilter=2:111101001&">Magliaso</a>&nbsp;18:00
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505392&boardType=arr&time=18:01&productsFilter=2:111101001&">Magliaso Paese</a>&nbsp;18:01
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505395&boardType=arr&time=18:04&productsFilter=2:111101001&">Agno</a>&nbsp;18:04
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505390&boardType=arr&time=18:07&productsFilter=2:111101001&">Serocca</a>&nbsp;18:07
+&#149;
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505393&boardType=arr&time=18:15&productsFilter=2:111101001&">Cappella-Agnuzzo</a>&nbsp;18:15
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8530790&boardType=arr&time=18:16&productsFilter=2:111101001&">Sorengo Laghetto</a>&nbsp;18:16
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505399&boardType=arr&time=18:17&productsFilter=2:111101001&">Sorengo</a>&nbsp;18:17
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505391&boardType=arr&time=18:20&productsFilter=2:111101001&">Lugano FLP</a>&nbsp;18:20
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+Lugano FLP
+</td>
+</tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/193161/109695/217146/44186/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">EC 321</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">18:24</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8503000&boardType=arr&time=15:32&productsFilter=2:111101001&">Z&#252;rich HB</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8503000&boardType=arr&time=15:32&productsFilter=2:111101001&">Z&#252;rich HB</a>&nbsp;15:32
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8502204&boardType=arr&time=16:00&productsFilter=2:111101001&">Zug</a>&nbsp;16:00
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505004&boardType=arr&time=16:17&productsFilter=2:111101001&">Arth-Goldau</a>&nbsp;16:17
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505213&boardType=arr&time=17:59&productsFilter=2:111101001&">Bellinzona</a>&nbsp;17:59
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=18:24&productsFilter=2:111101001&">Lugano</a>&nbsp;18:24
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+2<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/189900/488288/527914/200657/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">S 10 25178</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">18:26</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301700&boardType=arr&time=17:10&productsFilter=2:111101001&">Milano Centrale</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301700&boardType=arr&time=17:10&productsFilter=2:111101001&">Milano Centrale</a>&nbsp;17:10
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301322&boardType=arr&time=17:22&productsFilter=2:111101001&">Monza</a>&nbsp;17:22
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=17:58&productsFilter=2:111101001&">Chiasso</a>&nbsp;17:58
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505305&boardType=arr&time=18:06&productsFilter=2:111101001&">Mendrisio</a>&nbsp;18:06
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8518475&boardType=arr&time=18:07&productsFilter=2:111101001&">Mendrisio S. Martino</a>&nbsp;18:07
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505304&boardType=arr&time=18:10&productsFilter=2:111101001&">Capolago-Riva S. Vitale</a>&nbsp;18:10
+&#149;
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505303&boardType=arr&time=18:15&productsFilter=2:111101001&">Maroggia-Melano</a>&nbsp;18:15
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505302&boardType=arr&time=18:18&productsFilter=2:111101001&">Melide</a>&nbsp;18:18
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505301&boardType=arr&time=18:22&productsFilter=2:111101001&">Lugano-Paradiso</a>&nbsp;18:22
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=18:26&productsFilter=2:111101001&">Lugano</a>&nbsp;18:26
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+4<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/217524/123711/822908/338946/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">S 10 25181</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">18:33</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505212&boardType=arr&time=17:58&productsFilter=2:111101001&">Castione-Arbedo</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505212&boardType=arr&time=17:58&productsFilter=2:111101001&">Castione-Arbedo</a>&nbsp;17:58
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505213&boardType=arr&time=18:03&productsFilter=2:111101001&">Bellinzona</a>&nbsp;18:03
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505214&boardType=arr&time=18:06&productsFilter=2:111101001&">Giubiasco</a>&nbsp;18:06
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505216&boardType=arr&time=18:15&productsFilter=2:111101001&">Rivera-Bironico</a>&nbsp;18:15
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505217&boardType=arr&time=18:19&productsFilter=2:111101001&">Mezzovico</a>&nbsp;18:19
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505218&boardType=arr&time=18:25&productsFilter=2:111101001&">Taverne-Torricella</a>&nbsp;18:25
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505219&boardType=arr&time=18:27&productsFilter=2:111101001&">Lamone-Cadempino</a>&nbsp;18:27
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=18:33&productsFilter=2:111101001&">Lugano</a>&nbsp;18:33
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+2<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/572313/236278/217996/81773/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">ICN 679</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">18:47</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8500010&boardType=arr&time=15:04&productsFilter=2:111101001&">Basel SBB</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8500010&boardType=arr&time=15:04&productsFilter=2:111101001&">Basel SBB</a>&nbsp;15:04
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8500218&boardType=arr&time=15:30&productsFilter=2:111101001&">Olten</a>&nbsp;15:30
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505000&boardType=arr&time=16:18&productsFilter=2:111101001&">Luzern</a>&nbsp;16:18
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505004&boardType=arr&time=16:50&productsFilter=2:111101001&">Arth-Goldau</a>&nbsp;16:50
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505213&boardType=arr&time=18:25&productsFilter=2:111101001&">Bellinzona</a>&nbsp;18:25
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=18:47&productsFilter=2:111101001&">Lugano</a>&nbsp;18:47
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+3<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/951183/409053/692074/29001/95?date=30.11.14&station_evaId=8505391&station_type=arr">
+<span class="bold">S 60 95</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">18:50</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=18:25&productsFilter=2:111101001&">Ponte Tresa</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=18:25&productsFilter=2:111101001&">Ponte Tresa</a>&nbsp;18:25
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505397&boardType=arr&time=18:27&productsFilter=2:111101001&">Caslano</a>&nbsp;18:27
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505396&boardType=arr&time=18:30&productsFilter=2:111101001&">Magliaso</a>&nbsp;18:30
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505392&boardType=arr&time=18:31&productsFilter=2:111101001&">Magliaso Paese</a>&nbsp;18:31
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505395&boardType=arr&time=18:34&productsFilter=2:111101001&">Agno</a>&nbsp;18:34
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505390&boardType=arr&time=18:37&productsFilter=2:111101001&">Serocca</a>&nbsp;18:37
+&#149;
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505393&boardType=arr&time=18:45&productsFilter=2:111101001&">Cappella-Agnuzzo</a>&nbsp;18:45
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8530790&boardType=arr&time=18:46&productsFilter=2:111101001&">Sorengo Laghetto</a>&nbsp;18:46
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505399&boardType=arr&time=18:47&productsFilter=2:111101001&">Sorengo</a>&nbsp;18:47
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505391&boardType=arr&time=18:50&productsFilter=2:111101001&">Lugano FLP</a>&nbsp;18:50
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+Lugano FLP
+</td>
+</tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/895254/349586/274838/160999/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">S 10 25132</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">18:56</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=18:28&productsFilter=2:111101001&">Chiasso</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=18:28&productsFilter=2:111101001&">Chiasso</a>&nbsp;18:28
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505306&boardType=arr&time=18:31&productsFilter=2:111101001&">Balerna</a>&nbsp;18:31
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505305&boardType=arr&time=18:36&productsFilter=2:111101001&">Mendrisio</a>&nbsp;18:36
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8518475&boardType=arr&time=18:37&productsFilter=2:111101001&">Mendrisio S. Martino</a>&nbsp;18:37
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505304&boardType=arr&time=18:40&productsFilter=2:111101001&">Capolago-Riva S. Vitale</a>&nbsp;18:40
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505303&boardType=arr&time=18:45&productsFilter=2:111101001&">Maroggia-Melano</a>&nbsp;18:45
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505302&boardType=arr&time=18:48&productsFilter=2:111101001&">Melide</a>&nbsp;18:48
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505301&boardType=arr&time=18:52&productsFilter=2:111101001&">Lugano-Paradiso</a>&nbsp;18:52
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=18:56&productsFilter=2:111101001&">Lugano</a>&nbsp;18:56
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+4<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/937188/363565/335792/144500/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">S 10 25133</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">19:03</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505209&boardType=arr&time=18:05&productsFilter=2:111101001&">Biasca</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505209&boardType=arr&time=18:05&productsFilter=2:111101001&">Biasca</a>&nbsp;18:05
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505212&boardType=arr&time=18:14&productsFilter=2:111101001&">Castione-Arbedo</a>&nbsp;18:14
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505213&boardType=arr&time=18:33&productsFilter=2:111101001&">Bellinzona</a>&nbsp;18:33
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505214&boardType=arr&time=18:36&productsFilter=2:111101001&">Giubiasco</a>&nbsp;18:36
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505216&boardType=arr&time=18:45&productsFilter=2:111101001&">Rivera-Bironico</a>&nbsp;18:45
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505217&boardType=arr&time=18:49&productsFilter=2:111101001&">Mezzovico</a>&nbsp;18:49
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505218&boardType=arr&time=18:55&productsFilter=2:111101001&">Taverne-Torricella</a>&nbsp;18:55
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505219&boardType=arr&time=18:57&productsFilter=2:111101001&">Lamone-Cadempino</a>&nbsp;18:57
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=19:03&productsFilter=2:111101001&">Lugano</a>&nbsp;19:03
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+2<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/132609/136195/183380/47513/95?date=30.11.14&station_evaId=8505391&station_type=arr">
+<span class="bold">S 60 96</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">19:20</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=18:55&productsFilter=2:111101001&">Ponte Tresa</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505398&boardType=arr&time=18:55&productsFilter=2:111101001&">Ponte Tresa</a>&nbsp;18:55
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505397&boardType=arr&time=18:57&productsFilter=2:111101001&">Caslano</a>&nbsp;18:57
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505396&boardType=arr&time=19:00&productsFilter=2:111101001&">Magliaso</a>&nbsp;19:00
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505392&boardType=arr&time=19:01&productsFilter=2:111101001&">Magliaso Paese</a>&nbsp;19:01
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505395&boardType=arr&time=19:04&productsFilter=2:111101001&">Agno</a>&nbsp;19:04
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505390&boardType=arr&time=19:07&productsFilter=2:111101001&">Serocca</a>&nbsp;19:07
+&#149;
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505393&boardType=arr&time=19:15&productsFilter=2:111101001&">Cappella-Agnuzzo</a>&nbsp;19:15
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8530790&boardType=arr&time=19:16&productsFilter=2:111101001&">Sorengo Laghetto</a>&nbsp;19:16
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505399&boardType=arr&time=19:17&productsFilter=2:111101001&">Sorengo</a>&nbsp;19:17
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505391&boardType=arr&time=19:20&productsFilter=2:111101001&">Lugano FLP</a>&nbsp;19:20
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+Lugano FLP
+</td>
+</tr>
+<tr class="zebra-row-0">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/177075/484015/820766/351358/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">S 10 25180</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">19:26</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301700&boardType=arr&time=18:10&productsFilter=2:111101001&">Milano Centrale</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301700&boardType=arr&time=18:10&productsFilter=2:111101001&">Milano Centrale</a>&nbsp;18:10
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301322&boardType=arr&time=18:22&productsFilter=2:111101001&">Monza</a>&nbsp;18:22
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=18:58&productsFilter=2:111101001&">Chiasso</a>&nbsp;18:58
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505305&boardType=arr&time=19:06&productsFilter=2:111101001&">Mendrisio</a>&nbsp;19:06
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8518475&boardType=arr&time=19:07&productsFilter=2:111101001&">Mendrisio S. Martino</a>&nbsp;19:07
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505304&boardType=arr&time=19:10&productsFilter=2:111101001&">Capolago-Riva S. Vitale</a>&nbsp;19:10
+&#149;
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505303&boardType=arr&time=19:15&productsFilter=2:111101001&">Maroggia-Melano</a>&nbsp;19:15
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505302&boardType=arr&time=19:18&productsFilter=2:111101001&">Melide</a>&nbsp;19:18
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505301&boardType=arr&time=19:22&productsFilter=2:111101001&">Lugano-Paradiso</a>&nbsp;19:22
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=19:26&productsFilter=2:111101001&">Lugano</a>&nbsp;19:26
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+4<br>
+&nbsp;
+</td>
+</tr>
+<tr class="zebra-row-1">
+<td class="journey" headers="sq_journey">
+<a href="http://fahrplan.sbb.ch/bin/traininfo.exe/en/657255/636887/347038/45566/95?date=30.11.14&station_evaId=8505300&station_type=arr">
+<span class="bold">EC 322</span>
+</a>
+</td>
+<td class="time" headers="sq_time">
+<span class="bold">19:32</span>
+</td>
+<td class="result">
+<span class="bold">
+<a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301700&boardType=arr&time=18:25&productsFilter=2:111101001&">Milano Centrale</a></span>
+<br>
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301700&boardType=arr&time=18:25&productsFilter=2:111101001&">Milano Centrale</a>&nbsp;18:25
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8301322&boardType=arr&time=18:37&productsFilter=2:111101001&">Monza</a>&nbsp;18:37
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505307&boardType=arr&time=19:12&productsFilter=2:111101001&">Chiasso</a>&nbsp;19:12
+-
+<a  href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&boardType=arr&time=19:32&productsFilter=2:111101001&">Lugano</a>&nbsp;19:32
+<span class="rs">
+</span>
+</td>
+<td class="platform" headers="sq_platform">
+3<br>
+&nbsp;
+</td>
+</tr>
+</table>
+<div class="sq_tableHint">
+Behind this sign &#149; all stops are shown, before only the most important ones.
+</div>
+<div class="buttonHolder">
+<a class="icon std" href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&time=19:32%2B1&maxJourneys=40&boardType=arr&REQTrain_name=&productsFilter=2:111101001&dateBegin=30.11.14&dateEnd=30.11.14&selectDate=today&start=yes" class="hafas-browse-link">Further&nbsp;connections</a>
+</div>
+</div>
+<div class="hac_greybox">
+<p class="boxTitle">Lugano - Common informationen</p>
+<span class="result bold">Following stations are included in this station schedule:</span>
+<br />
+<ul>
+<li>- <a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505391&REQTrain_name=&boardType=arr&time=now&productsFilter=2:111101001&">Lugano FLP</a></li>
+</ul>
+<span class="result bold">Stations in short distance(footpath):</span>
+<br />
+<ul>
+<li>- <a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505391&REQTrain_name=&boardType=arr&time=now&productsFilter=2:111101001&">Lugano FLP</a> (ca. 5 Minutes)</li>
+<li>- <a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505380&REQTrain_name=&boardType=arr&time=now&productsFilter=2:111101001&">Lugano, Stazione</a> (ca. 4 Minutes)</li>
+<li>- <a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8591805&REQTrain_name=&boardType=arr&time=now&productsFilter=2:111101001&">Lugano, Stazione Nord</a> (ca. 4 Minutes)</li>
+<li>- <a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8575310&REQTrain_name=&boardType=arr&time=now&productsFilter=2:111101001&">Lugano, Genzana</a> (ca. 12 Minutes)</li>
+<li>- <a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8575273&REQTrain_name=&boardType=arr&time=now&productsFilter=2:111101001&">Lugano, Stazione Via Sorengo</a> (ca. 6 Minutes)</li>
+<li>- <a href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8575286&REQTrain_name=&boardType=arr&time=now&productsFilter=2:111101001&">Lugano, Stazione Piazza Besso</a> (ca. 7 Minutes)</li>
+</ul>
+</div>
+<div class="hac_greybox">
+<div class="buttonHolder">
+<a class="icon std" href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&REQTrain_name=&boardType=arr&time=14:45&maxJourneys=40&dateBegin=30.11.14&dateEnd=30.11.14&selectDate=today&productsFilter=2:111101001&editStation=yes&" title="Change query input data">
+Change query input data
+</a>
+<a class="icon std" href="http://fahrplan.sbb.ch/bin/stboard.exe/en?">
+New request
+</a>
+</div>
+<div style="margin-top: 5px;margin-bottom: 5px;height:1px;border-bottom:1px solid #cccccc;clear:both;"></div>
+<div class="buttonHolder">
+<a class="greyButton" href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=8505300&REQTrain_name=&boardType=dep&time=14:45&maxJourneys=40&dateBegin=30.11.14&dateEnd=30.11.14&selectDate=today&productsFilter=2:111101001&start=yes">
+Departure board
+</a>
+<a class="greyButton" href="http://fahrplan.sbb.ch/bin/stboard.exe/en?input=Lugano%238505300&REQTrain_name=&boardType=arr&time=14:45&maxJourneys=40&dateBegin=30.11.14&dateEnd=30.11.14&selectDate=today&productsFilter=2:111101001&start=yes&pageViewMode=PRINT&" target="Printview" onclick="popUp('about:blank','Printview','pri');" title="Print">
+Print
+</a>
+</div>
+</div>
+<div class="hac_greybox footer">
+<div>
+Timetable valid from 15.12.13 to 12.12.15.
+Software/Data: <a class="std icon fliesstext" href="http://www.hacon.de/hafas_e" target="_blank">HAFAS 5.40.SBB.4.13.4/5.40.SBB.4.13.4</a> - 30.11.14<br />
+Data identifier 1: 26.11.14&nbsp;/&nbsp;09:57&nbsp;/&nbsp;pxcii<br />
+Data identifier 2: 26.11.14&nbsp;/&nbsp;09:41&nbsp;/&nbsp;pxbq1
+<!-- 0-pxcii;1-pxbq1;a-nuzx2;p-lncdx -->
+<!-- Template version: 4.11 -->
+</div>
+<div>
+Subject to change. All Information, connections and adherence to the timetable are given without guarantee.&nbsp;
+</div>
+</div>
+<div class="hac_greybox railservice">
+<strong>Timetable information, ticket orders, event tickets.</strong> Rail Service 0900 300 300 (CHF 1.19/min. from the Swiss fixed-line network), 24 hrs/day.<br />
+<strong>Recorded rail travel information (disruption to train services, strikes, etc.).</strong> Tel. 166 (CHF 0.50 per call and minute from the Swiss fixed-line network).<br />
+<strong>Before travelling: Purchase and/or validate tickets.</strong> When you see the symbol <img src="/img/icons/selbstkontrolle.gif" alt="" /> on a train, you must bear in mind that tickets are not sold on board. Please buy and/or validate your ticket before boarding. If you do not have a valid ticket, you will have to pay a fine. Your personal details will be recorded. The fine is increased for a repeat offence.
+</div>
+</div>
+<div class="parbase leaderboard section">
+<!--  BEGIN LEADERBOARD -->
+<div class="mod modExternalAdvertisement skinExternalAdvertisementLeaderboard" style="">
+<div class="inner">
+<div class="bd">
+<script language="javascript">
+<!--
+var availWidth;
+if ( window.innerWidth ) {
+availWidth=window.innerWidth;
+}
+else {
+availWidth=document.body.clientWidth;
+}
+var hasInputChildren = function(parentId) {
+var children = document.getElementById(parentId).childNodes,
+childrenCount = children.length,
+i = 0,
+inputChildren = 0;
+for (; i < childrenCount; i++) {
+var nodeChild = children[i];
+if (nodeChild.nodeType === 1 && nodeChild.nodeName.toLowerCase() === 'input') {
+inputChildren += 1;
+}
+}
+return inputChildren;
+};
+var hf_ad_array = ["hf_start","hf_s_name","hf_s_long","hf_s_lat","hf_s_didok","hf_s_time","hf_s_date","hf_s_inter","hf_d_name","hf_d_long","hf_d_lat","hf_d_didok","hf_d_time","hf_d_date","hf_d_zip","hf_d_inter","hf_arrive_bookdate","hf_s_canton","hf_d_canton"],
+params = '',
+elem = 0;
+if(document.getElementById('extra-information')!=null){
+elem = hasInputChildren('extra-information');
+}
+if(elem>1){
+for(var i=0; i < hf_ad_array.length; i++){
+var value = "";
+var formElements = document.getElementsByName(hf_ad_array[i]);
+if(formElements && formElements[0]) {
+value = formElements[0].value;
+value = value.replace(/ /g, '%20');
+}
+params += ";kv" + hf_ad_array[i] + "=" + value;
+}
+}
+if (window.adgroupid == undefined) {
+window.adgroupid = Math.round(Math.random() * 1000);
+}
+document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtech.de/addyn/3.0/1152/4368554/0/225/ADTECH;loc=100;target=_blank;kvsbb=;target=_blank;grp='+window.adgroupid+';misc='+new Date().getTime()+';kvavailWidth='+availWidth+';'+params+'"></scri'+'pt>');
+//-->
+</script>
+<noscript>
+<a href="http://adserver.adtech.de/adlink/3.0/1152/4368554/0/225/ADTECH;loc=300;grp=366263545;kvsbb=" target="_blank" class="iconlink externallink">
+<img src="http://adserver.adtech.de/adserv/3.0/1152/4368554/0/225/ADTECH;loc=300;grp=366263545;kvsbb=" width="width" alt="Werbung"/>
+</a>
+</noscript>
+</div>
+</div>
+</div>
+<!--  END LEADERBOARD -->
+</div>
+<div class="mod modIndexPath"><div class="inner"><!-- template content start --><div class="bd">
+<ul>
+<li>
+<a title="Home" href="http://www.sbb.ch/en/home.html" class="breadcrumbHome noexternalicon">
+Home
+</a>
+</li>
+<li>
+<a title="Timetable" href="http://www.sbb.ch/en/timetable.html" class="noexternalicon">
+Timetable
+</a>
+</li>
+<li class="active">
+<a title="Online timetable" href="http://fahrplan.sbb.ch/bin/query.exe/en" class="noexternalicon">
+Online timetable
+</a>
+</li>
+</ul>
+</div><!-- template content end --></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="ft layoutFt">
+<div class="bg-corner-bottomleft"></div>
+<div class="bg-corner-bottomright"></div>
+</div>
+</div>
+<div class="bottom layoutBottom">
+<div class="bl"></div>
+<div class="br"></div>
+</div>
+</div>
+</div>
+<div class="sbb-col-advertisement">
+<div class="parsys advertisementPar iparsys">
+<div class="iparys_inherited"><div class="parsys advertisementPar iparsys"><div class="section"><div class="parbase adserver">
+<div class="mod modExternalAdvertisement">
+<b class="top"><b class="tl"></b><b class="tr"></b></b>
+<div class="inner">
+<div class="bd">
+<script language="javascript">
+<!--
+var availWidth;
+if ( window.innerWidth ) {
+availWidth=window.innerWidth;
+}
+else {
+availWidth=document.body.clientWidth;
+}
+if (availWidth > 1200) {
+var hasInputChildren = function(parentId) {
+var children = document.getElementById(parentId).childNodes,
+childrenCount = children.length,
+i = 0,
+inputChildren = 0;
+for (; i < childrenCount; i++) {
+var nodeChild = children[i];
+if (nodeChild.nodeType === 1 && nodeChild.nodeName.toLowerCase() === 'input') {
+inputChildren += 1;
+}
+}
+return inputChildren;
+};
+var hf_ad_array = ["hf_start","hf_s_name","hf_s_long","hf_s_lat","hf_s_didok","hf_s_time","hf_s_date","hf_s_inter","hf_d_name","hf_d_long","hf_d_lat","hf_d_didok","hf_d_time","hf_d_date","hf_d_zip","hf_d_inter","hf_arrive_bookdate","hf_s_canton","hf_d_canton"],
+params = '',
+elem = 0;
+if(document.getElementById('extra-information')!=null){
+elem = hasInputChildren('extra-information');
+}
+if(elem>1){
+for(var i=0; i < hf_ad_array.length; i++){
+var value = "";
+var formElements = document.getElementsByName(hf_ad_array[i]);
+if(formElements && formElements[0]) {
+value = formElements[0].value;
+value = value.replace(/ /g, '%20');
+}
+params += ";kv" + hf_ad_array[i] + "=" + value;
+}
+}
+if (window.adgroupid == undefined) {
+window.adgroupid = Math.round(Math.random() * 1000);
+}
+document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtech.de/addyn/3.0/1152/3132155/0/154/ADTECH;loc=100;target=_blank;kvsbb=;target=_blank;grp='+window.adgroupid+';misc='+new Date().getTime()+';kvavailWidth='+availWidth+';'+params+'"></scri'+'pt>');
+}
+//-->
+</script>
+<noscript>
+<a href="http://adserver.adtech.de/adlink/3.0/1152/3132155/0/154/ADTECH;loc=300;grp=1604349529;kvsbb=" target="_blank" class="iconlink externallink">
+<img src="http://adserver.adtech.de/adserv/3.0/1152/3132155/0/154/ADTECH;loc=300;grp=1604349529;kvsbb=" border="0">
+</a>
+</noscript>
+</div>
+</div>
+<b class="bottom"><b class="bl"></b><b class="br"></b></b>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="foot">
+<h1 class="nhInvisible">Footer</h1>
+<div class="content-wrapper">
+<div class="mod modFooterInteraction"><div class="inner"><!-- template content start --><div class="bd">
+<ul class="line lineFootInteraction">
+<li class="unit unitSearch footInteraction">
+<div class="mod modInteractionItem skinInteractionItemQuickSearch" data-lazyinit="true" id="quickSearch">
+<div class="inner">
+<div class="hd">
+<h3>
+<a class="interactionAnchor" href="http://www.sbb.ch/en/meta/suche.html" id="Search" target="_blank">
+Search/Webcode
+</a>
+</h3>
+<a class="iconlink icononly closelink" href="#" title="Close">
+Close
+</a>
+</div>
+<div class="bd set borderRadiusSmall">
+<!--[if IE]><div class="tl"></div><div class="tr"></div><![endif]-->
+<form action="http://www.sbb.ch/en/meta/suche.html" method="get" target="_blank">
+<ol>
+<li class="line">
+<div class="inputValReplace">
+<input type="hidden" name="_charset_" value="UTF-8" />
+<input type="hidden" name="_search_" value="true" />
+<label for="searchquery">Search term/Webcode...</label>
+<input name="q" id="searchquery" title="Search term/Webcode..." type="text" class="base" />
+<button title="Search" type="submit" class="base redButton">
+Search
+</button>
+</div>
+<div class="autoSuggest">
+</div>
+</li>
+<li class="line">
+<a class="iconlink helplink" href="http://www.sbb.ch/en/meta/suche/hilfe.html" title="Help" target="_blank">
+Keyword or webcode
+</a>
+</li>
+</ol>
+<input type="hidden" name="autoSuggestUrl" value="" />
+<input type="hidden" name="autoSuggestTemplateUrl" value="" />
+</form>
+<!--[if IE]><div class="bl"></div><div class="br"></div><![endif]-->
+</div>
+</div>
+</div>
+</li>
+<li class="unit footSBBWidgets footInteraction">
+<div class="mod modInteractionItem skinInteractionItemSBBWidgets"
+data-lazyinit="true" id="SBBWidgets">
+<div class="inner">
+<div class="hd">
+<h3>
+<a class="interactionAnchor" href="#" title="SBB Widgets">
+SBB Widgets
+</a>
+</h3>
+<a class="iconlink icononly closelink" href="#" title="Close">
+Close
+</a>
+</div>
+</div>
+<div id="SBBWidgetContainer">
+<div class="bd content-wrapper">
+<ul class="listing-sbbWidgets single_line">
+<li><a class="sbbWidgetItem addconnection-sbbWidgetItem" href="#MyConnections" data-uri="/en/timetable/online-timetable.frameworkexport.html" title="Timetable">
+Timetable
+</a>
+<fieldset class="params" id="paramsMyConnections">
+<input type="hidden" name="module_url"
+value="/content/sbb/en/desktop/home.onesbb-widgetmyconnetion.html" />
+<input type="hidden" name="connection_validation_url"
+value="/content/sbb/en/desktop/home.onesbb-sbbwidgetmyconnectionvalidation.json?_charset_=utf-8" />
+<input type="hidden" name="timetable_request_url"
+value="/content/sbb/en/desktop/home.onesbb-sbbwidgetmyconnection.json?_charset_=utf-8" />
+<input type="hidden"
+name="cannot_add_anymore_connections_warning"
+value="You can save a maximum of 5 connections" />
+</fieldset></li>
+<li><a class="sbbWidgetItem watch-sbbWidgetItem" href="#SbbClock" data-uri="/en/timetable/online-timetable.frameworkexport.html" title="SBB clock">
+SBB clock
+</a>
+<fieldset class="params" id="paramsSbbClock">
+<input type="hidden" name="module_url"
+value="/content/sbb/en/desktop/home.onesbb-widgetsbbclock.html" />
+</fieldset></li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<div class="parbase widgetssocialmedia socialmedia">
+<li class="unit footSBBSocialMedia footInteraction">
+<div class="mod modInteractionItem skinInteractionItemSBBSocialMedia"
+data-lazyinit="true" id="SBBSocialMedia">
+<div class="inner">
+<div class="hd">
+<h3>
+<a title="SBB Social Media" href="#" class="noAnchor"> Social Media
+</a>
+</h3>
+<a title="schliessen" href="#" class="iconlink icononly closelink closeLinkSM"> close
+</a>
+</div>
+<div id="SBBSocialMediaContainer">
+<div class="bd content-wrapper">
+<ul class="listing-sbbSocialMedia single_line">
+<li>
+<a title="Facebook" href="http://www.facebook.com/sbb.cff.ffs.ch" class="sbbSocialMediaItem externallink" target="_blank">
+<img src="/fahrplan_en/content/sbb/en/desktop/_jcr_content/configWidgetsSocialMedia/widgetsSocialMediaItems/facebook/image.spooler.socialmedia.45.png/1382509029591.png" alt="Facebook" title="Facebook" width="45" height="45"/>
+<span>Facebook</span>
+</a>
+</li>
+<li>
+<a title="Twitter" href="https://twitter.com/RailService" class="sbbSocialMediaItem externallink" target="_blank">
+<img src="/fahrplan_en/content/sbb/en/desktop/_jcr_content/configWidgetsSocialMedia/widgetsSocialMediaItems/7_1382509011715/image.spooler.socialmedia.45.png/1382509058447.png" alt="Twitter" title="Twitter" width="45" height="45"/>
+<span>Twitter</span>
+</a>
+</li>
+<li>
+<a title="YouTube" href="http://youtube.com/sbbcffffs" class="sbbSocialMediaItem externallink" target="_blank">
+<img src="/fahrplan_en/content/sbb/en/desktop/_jcr_content/configWidgetsSocialMedia/widgetsSocialMediaItems/youtube/image.spooler.socialmedia.45.png/1382509113234.png" alt="YouTube" title="YouTube" width="45" height="45"/>
+<span>YouTube</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</li>
+</div>
+</ul>
+</div><!-- template content end --></div></div>
+<div class="mod modFooterNavigation"><div class="inner"><!-- template content start --><div class="bd">
+<ul class="single_line">
+<li><a title="Technical requirement" href="http://www.sbb.ch/en/meta/technical-requirement.html">Technical requirement</a></li>
+<li><a title="Imprint" href="http://www.sbb.ch/en/meta/imprint.html">Imprint</a></li>
+<li><a title="Legal information" href="http://www.sbb.ch/en/meta/legal-information.html">Legal information</a></li>
+<li><a title="Data protection" href="http://www.sbb.ch/en/meta/data-protection.html">Data protection</a></li>
+<li>
+<a href="javascript:window.print()" title="Print">Print</a>
+</li>
+<li id="railteamLogo" class="hide">
+</li>
+</ul>
+</div><!-- template content end --></div></div>
+</div>
+</div>
+</div>
+<!--  Globales HTML aus Websiteconfig -->
+<!--  Globales HTML aus Websiteconfig -->
+<!-- NET-Metrix-Audit version="1.5" -->
+<script language="JavaScript" type="text/javascript">
+var NETMX="http://sbb.wemfbox.ch/cgi-bin/ivw/CP/en"
+document.write("<img id=\"nmxpixel\" src=\""+NETMX+"?r="+escape(document.referrer)+"&d="+(Math.random()*100000)+"&x="+screen.width+"x"+screen.height+"\" width=\"1\" height=\"1\" />");
+</script>
+<noscript>
+<img src="http://sbb.wemfbox.ch/cgi-bin/ivw/CP/en" width="1" height="1" alt=""/>
+</noscript>
+<!-- /NET-Metrix-Audit -->
+</body>
+</html>
